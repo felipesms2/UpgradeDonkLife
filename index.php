@@ -10,6 +10,9 @@
     ?>
 </head>
 <body>
+    <?php
+        include "./view-generic-modal.php";
+    ?>
     <div class="container border mt-5">
         <div id="form-content">
             <?php include "./view-form.register.php"?>
