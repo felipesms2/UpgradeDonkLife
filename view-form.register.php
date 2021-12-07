@@ -17,7 +17,9 @@
             </div>
             <input type="checkbox" name="" id=""> 
                 <small>Aceito os termos de uso da plataforma</small> 
-            <div>
-
+            <div class="mb-2">
+                <small>
+                    Já tem uma conta? <button class="btn btn-info">Entrar</button>
+                </small>
             </div>
         
