@@ -12,3 +12,8 @@ function forgotPassView()
         metadata["fileBodyLoad"] = "";
         modifyModalData(metadata);
     }
+
+function SpaDiv(module) 
+    {
+        $("#form-content").load("view-form-login.php");
+    }
