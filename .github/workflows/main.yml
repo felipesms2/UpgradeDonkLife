@@ -14,4 +14,4 @@ jobs:
         server: ${{ secrets.SERVER }}
         username: ${{ secrets.USER }}
         password: ${{ secrets.PASSWORD }}
-        server-dir: /
+        server-dir: /forum/register/
