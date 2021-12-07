@@ -19,7 +19,7 @@
                 <small>Aceito os termos de uso da plataforma</small> 
             <div class="mb-2">
                 <small>
-                    Já tem uma conta? <button class="btn btn-info" onclick="spaDiv()">Entrar</button>
+                    Já tem uma conta? <button class="btn btn-info" onclick="spaDiv('login')">Entrar</button>
                 </small>
             </div>
         
