@@ -13,7 +13,7 @@ function forgotPassView()
         modifyModalData(metadata);
     }
 
-function SpaDiv(module) 
+function spaDiv(module) 
     {
-        $("#form-content").load("view-form-login.php");
+        $("#form-content").load("view-form-" + module + ".php");
     }
