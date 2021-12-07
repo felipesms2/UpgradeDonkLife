@@ -18,7 +18,7 @@
             <input type="checkbox" name="" id=""> 
                 <small>Aceito os termos de uso da plataforma</small> 
             <div>
-                <button class="btn-primary btn" data-bs-toggle="modal" data-bs-target="#genericModal">
+                <button onclick="forgotPassView()" class="btn-primary btn" data-bs-toggle="modal" data-bs-target="#genericModal">
                     <small>
                         Esqueci minha senha
                     </small>
