@@ -1,6 +1,7 @@
 function modifyModalData(metaData) 
     {
-        
+        console.log(metaData);
+        $("#modalTitle").html(metaData['title']);
     }
 
 
