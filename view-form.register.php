@@ -1,6 +1,6 @@
 
 
-        <form action="" method="post">
+        
             <label for="userFriendlyName">Nome</label>
             <input type="text" name="" class="form-control">
             <label for="">Email</label>
@@ -18,10 +18,10 @@
             <input type="checkbox" name="" id=""> 
                 <small>Aceito os termos de uso da plataforma</small> 
             <div>
-                <button class="btn-primary btn">
+                <button class="btn-primary btn" data-bs-toggle="modal" data-bs-target="#genericModal">
                     <small>
                         Esqueci minha senha
                     </small>
                 </button>
             </div>
-        </form>
+        
