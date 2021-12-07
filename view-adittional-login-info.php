@@ -1,13 +1,7 @@
+<div id='footerRegister'> 
+    Logar
+</div>
 
-    <?php
-        $actionInfo = $_GET['actionInfo'];
-
-        if ($actionInfo =="create") 
-            {
-                
-            }
-        else 
-            {
-            
-            }
-    ?>
+<div id="footerLogin">
+    Criar Conta
+</div>
