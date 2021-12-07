@@ -10,6 +10,10 @@
     ?>
 </head>
 <body>
-    
+    <div class="container border mt-5">
+        <div id="form-content">
+            <?php include "./view-form.register.php"?>
+        </div>
+    </div>
 </body>
 </html>
