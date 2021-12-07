@@ -8,5 +8,6 @@ function forgotPassView()
     {
         let metadata =[];
         metadata["title"] = "Resetar Senha";
-        alert("modificar modal");
+        metadata["fileBodyLoad"] = "";
+        //alert("modificar modal");
     }
