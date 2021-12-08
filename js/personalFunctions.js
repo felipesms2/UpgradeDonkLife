@@ -23,12 +23,22 @@ function spaDiv(module)
     let mode = urlParams.get("mode");
 
 
-    function footerAdditional(mode) 
+    function displayAdd(mode) 
     {
         $("#additionalRole").val(mode);
-        console.log(mode);            
+        mainReferenceDiv = "footerRegister";
+        secondaryReferenceDiv = "footerLogin";
+        if (mode =="login") 
+            {
+                mainReferenceDiv = "footerLogin";
+                secondaryReferenceDiv = "footerRegister";
+            }
+
+        $("#" + secondaryReferenceDiv).addClass("d-none");
+        $("#" + mainReferenceDiv).removeClass("d-none");
+        //console.log(mode);     
     }
     
-    footerAdditional(mode);
+    
 
 
