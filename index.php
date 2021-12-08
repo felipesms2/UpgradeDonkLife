@@ -14,7 +14,7 @@
         include "./view-generic-modal.php";
     ?>
     <div class="container border mt-5">
-        <div id="form-content">
+        <div id="form-content" class="mb-2">
             <?php include "./view-form-register.php"?>
         </div>
         <?php include "./view-adittional-login-info.php"?>
