@@ -1,6 +1,13 @@
 <input type="hidden" id="additionaLogin" value="">
 <div class="d-none" id='footerLogin'> 
-    Logar
+<div class="mb-2">
+        <small id='additionalText'>Não tem uma conta?</small>
+            <button 
+                class="btn btn-info" 
+                onclick="spaDiv('login'); displayAdd('register')"
+                id="additionalTextButton"
+                >Criar Registro</button>
+    </div>
 </div>
 
 <div id="footerRegister">
