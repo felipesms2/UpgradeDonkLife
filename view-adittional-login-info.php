@@ -1,4 +1,4 @@
-<input type="hidden" id="additionalRole" value="">
+<input type="hidden" id="additionaLogin" value="">
 <div class="d-none" id='footerLogin'> 
     Logar
 </div>
