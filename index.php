@@ -17,6 +17,7 @@
         <div id="form-content">
             <?php include "./view-form.register.php"?>
         </div>
+        <?php include "./view-adittional-login-info.php"?>
     </div>
 </body>
 </html>
