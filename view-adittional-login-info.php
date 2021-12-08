@@ -4,5 +4,9 @@
 </div>
 
 <div id="footerLogin">
-    Criar Conta
+    <div class="mb-2">
+        <small>
+            Já tem uma conta? <button class="btn btn-info" onclick="spaDiv('login')">Entrar</button>
+        </small>
+    </div>
 </div>
