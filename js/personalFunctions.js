@@ -25,7 +25,8 @@ function spaDiv(module)
 
     function footerAdditional(mode) 
     {
-        //alert(mode);            
+        if            
     }
     
     footerAdditional(mode);
+
