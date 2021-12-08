@@ -4,9 +4,9 @@
         <small id='additionalText'>Não tem uma conta?</small>
             <button 
                 class="btn btn-info" 
-                onclick="spaDiv('login'); displayAdd('register')"
+                onclick="spaDiv('register'); displayAdd('register')"
                 id="additionalTextButton"
-                >Criar Registro</button>
+                >Cadastrar</button>
     </div>
 </div>
 
