@@ -25,8 +25,10 @@ function spaDiv(module)
 
     function footerAdditional(mode) 
     {
-        if            
+        $("#additionalRole").val(mode);
+        console.log(mode);            
     }
     
     footerAdditional(mode);
+
 
