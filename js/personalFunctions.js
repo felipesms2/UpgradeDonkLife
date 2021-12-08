@@ -9,7 +9,7 @@ function forgotPassView()
         let metadata =[];
         metadata["title"] = "Resetar Senha";
         metadata["fileBodyLoad"] = "";
-        metadata["formLoad"] = ;
+        metadata["formLoad"] = 
         modifyModalData(metadata);
     }
 

@@ -4,7 +4,7 @@
         <small id='additionalText'>Não tem uma conta?</small>
             <button 
                 class="btn btn-info" 
-                onclick="spaDiv('register'); displayAdd('register')"
+                onclick="spaDiv('register'); displayAdd('register');"
                 id="additionalTextButton"
                 >Cadastrar</button>
     </div>
@@ -15,7 +15,7 @@
         <small id='additionalText'>Já tem uma conta?</small>
             <button 
                 class="btn btn-info" 
-                onclick="spaDiv('login'); displayAdd('login')"
+                onclick="spaDiv('login'); displayAdd('login');"
                 id="additionalTextButton"
                 >Entrar</button>
     </div>
