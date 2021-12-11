@@ -13,9 +13,10 @@ class User
         public $checkRegister;
 
         private function __construct($dbObj)
-            {
-                $this->pdoConn = $dbObj;
-            }
+        {
+            $this->pdoConn = $dbObj;
+            echo "aaaaaaa";
+        }
         
         public function userAvailability()
         {
