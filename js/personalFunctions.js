@@ -1,13 +1,18 @@
 function modifyModalData(metaData) 
     {
         $("#modalTitle").html(metaData['title']);
+        console.clear();
+        previousUsername =  document.getElementById("username").value;
+        $("#form-modal-body").load("view-form-forgot.php", function () {      
+            $("#usernameForgot").val(previousUsername);            
+        });
     }
 
 
 function forgotPassView() 
     {
         let metadata =[];
-        metadata["title"] = "Resetar Senha";
+        metadata["title"] = "Enviar Instruções";
         metadata["fileBodyLoad"] = "";
         metadata["formLoad"] = 
         modifyModalData(metadata);
