@@ -1,3 +1,3 @@
-<form action="" method="post">
-    
-</form>
+
+
+    <input type="text" class="form-control" name="username" id="usernameForgot">
