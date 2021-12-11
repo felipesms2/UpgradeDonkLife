@@ -1,3 +1,7 @@
 
 
-    <input type="text" class="form-control" name="username" id="usernameForgot">
+    <input 
+        type="text" 
+        class="form-control" 
+        name="email" id="usernameForgot"
+    >
