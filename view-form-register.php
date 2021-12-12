@@ -1,5 +1,5 @@
 
-
+            <form>
         
             <label for="userFriendlyName">Nome</label>
             <input type="text" name="" class="form-control">
@@ -18,4 +18,4 @@
             <input type="checkbox" name="" id=""> 
                 <small>Aceito os termos de uso da plataforma</small> 
 
-        
+            </form>  
