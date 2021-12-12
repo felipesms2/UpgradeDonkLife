@@ -45,5 +45,37 @@ function spaDiv(module)
     }
     
     
-
-
+                /*@ Registration start */
+                $('#btnSubmit').click( function(e) {
+                    e.preventDefault();
+     
+                    let formData = $('#registrationForm').serialize();
+     
+                    $.ajax({
+                        method: 'POST',
+                        url: 'processRegistration.php',
+                        data: formData,
+                        success: function (response) 
+                        {
+     
+                            let res = JSON.parse(response);
+     
+                            $('#responseContainer').removeClass('alert-danger');
+                            $('#responseContainer').addClass('alert-success');
+                            $('#responseContainer').html(res.msg);
+                            $('#responseContainer').show();
+     
+                        },
+                        error: function (response) {
+     
+                            let res = JSON.parse(response.responseText);
+     
+                            $('#responseContainer').addClass('alert-danger');
+                            $('#responseContainer').removeClass('alert-success');
+                            $('#responseContainer').html(res.msg);
+                            $('#responseContainer').show();
+                        },
+                    });
+                });
+     
+            });
