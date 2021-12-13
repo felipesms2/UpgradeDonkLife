@@ -23,4 +23,7 @@
             </div>
             <input type="checkbox" name="" id=""> 
                 <small>Aceito os termos de uso da plataforma</small> 
-            </form>  
+            </form>
+            <div id="responseContainer">
+
+            </div>  
