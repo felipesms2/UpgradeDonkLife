@@ -66,6 +66,7 @@ function spaDiv(module)
                     $('#responseContainer').addClass('alert-success');
                     $('#responseContainer').html(res.msg);
                     $('#responseContainer').show();
+                    //document.getElementById("registrationForm").reset();
                     //$('#form-content').html("aaa");
 
                 },
