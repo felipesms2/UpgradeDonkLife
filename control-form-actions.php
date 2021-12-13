@@ -1,7 +1,20 @@
 <?php
 
-include "./model-db-control.php";
+    include "./model-db-control.php";
+    $postString = implode(",", $_POST);
+    $action = $_POST['action'];    
 
-$postString = implode(",", $_POST);
+    switch ($action) {
+        case 'registration':
+            $postString .= $action;    
+        break;
+        
+        default:
+        
+            break;
+    }
 
-echo json_encode( [ 'msg' => $postString ] );
+
+
+    echo json_encode( [ 'msg' => $postString ] );
+    
