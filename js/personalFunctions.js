@@ -52,13 +52,13 @@ function spaDiv(module)
             e.preventDefault();
 
             let formData = $('#registrationForm').serialize();
+            console.log(formData);
 
             $.ajax({
                 method: 'POST',
-                url: 'processRegistration.php',
+                url: 'control-form-actions.php',
                 data: formData,
-                success: function (response) 
-                {
+                success: function (response) {
 
                     let res = JSON.parse(response);
 
