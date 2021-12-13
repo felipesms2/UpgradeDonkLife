@@ -18,6 +18,9 @@
             <?php include "./view-form-register.php"?>
         </div>
         <?php include "./view-adittional-login-info.php"?>
+        <div id="responseContainer">
+            
+        </div>
     </div>
 </body>
 </html>
