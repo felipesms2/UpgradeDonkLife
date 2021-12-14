@@ -17,7 +17,7 @@ class User
             return filter_var($email, FILTER_VALIDATE_EMAIL);
         }
 
-        private function __construct($dbObj)
+        public function __construct($dbObj)
         {
             $this->pdoConn = $dbObj;
         }
