@@ -20,7 +20,6 @@ class User
         private function __construct($dbObj)
         {
             $this->pdoConn = $dbObj;
-            echo "aaaaaaa";
         }
         
         public function userAvailability()
