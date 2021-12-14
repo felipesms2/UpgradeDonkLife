@@ -25,17 +25,21 @@ class User
         
         public function userAvailability()
         {
+            $this->userFound["userName"] = 0;
+            $this->userFound["email"] = 0;
+
             $sqlGetUser = "SELECT * FROM phpbb_users WHERE username ='" . $this->userName . "'";
-            $sqlGetEmail = "SELECT * FROM phpbb_users WHERE email ='" . $this->email . "'";
+            $sqlGetEmail = "SELECT * FROM phpbb_users WHERE user_email ='" . $this->email . "'";
+
             $result = $this->pdoConn->query($sqlGetUser);
             $rowCountUser = $result->rowCount();
             if ($rowCountUser >0) 
                 {
-                    $this->userFound['user'] = 1;
+                    $this->userFound['userName'] = 1;
                 }
-            $result = $this->pdoConn->query($sqlGetEmail);
-            $rowCountEmail = $result->rowCount();
-            if ($rowCountEmail >0) 
+             $result = $this->pdoConn->query($sqlGetEmail);
+             $rowCountEmail = $result->rowCount();
+             if ($rowCountEmail >0) 
                 {
                     $this->userFound['email'] = 1;
                 }
