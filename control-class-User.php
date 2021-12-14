@@ -12,6 +12,11 @@ class User
         public $passwordConfirm;
         public $checkRegister;
 
+        public function validateEmail($email)
+        {
+            return filter_var($email, FILTER_VALIDATE_EMAIL);
+        }
+
         private function __construct($dbObj)
         {
             $this->pdoConn = $dbObj;
@@ -22,4 +27,6 @@ class User
         {
             
         }
+
+
     }
