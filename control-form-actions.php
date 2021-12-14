@@ -19,7 +19,7 @@
             
             $user = new User($pdo);
             $user->email = $email;
-            $user->userName = $userName;
+            $user->userLogin = $userName;
             $user->userAvailability();
 
             if ($user->validateEmail($email)==false) 
@@ -27,9 +27,9 @@
                     $error .="<li>Formato de email incorreto</li>";
                 }
 
-            if ($user->userFound['userName']==true) 
+            if ($user->userFound['userLogin']==true) 
                 {
-                    $error .="<li>Usuário ". $user->userName ." Já está registrado</li>" ;
+                    $error .="<li>Usuário ". $user->userLogin ." Já está registrado</li>" ;
                 }
             
             if ($user->userFound['email']==true) 
@@ -40,7 +40,7 @@
 
             if (empty($name)) 
                 {
-                    $error .= "<li>Nome</li>";
+                    $error .= "<li>Nome é obrigatório</li>";
                 }
 
             if (empty($email)) 
@@ -69,6 +69,7 @@
             if (empty($error)) 
             {
                 http_response_code( 200 );
+                $user->register();
                 echo json_encode( [ 'msg' => "ok" ] );
             }
                 
