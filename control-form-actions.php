@@ -18,10 +18,25 @@
             $passwordConfirm = $_POST['passwordConfirm'];
             
             $user = new User($pdo);
+            $user->email = $email;
+            $user->userName = $userName;
+            $user->userAvailability();
+
             if ($user->validateEmail($email)==false) 
                 {
                     $error .="<li>Formato de email incorreto</li>";
                 }
+
+            if ($user->userFound['userName']==true) 
+                {
+                    $error .="<li>Usuário ". $user->userName ." Já está registrado</li>" ;
+                }
+            
+            if ($user->userFound['email']==true) 
+                {
+                    $error .="<li>Email ". $user->email ." Já está registrado</li>" ;
+                }
+            
 
             if (empty($name)) 
                 {
