@@ -11,6 +11,7 @@ class User
         public $password;
         public $passwordConfirm;
         public $checkRegister;
+        public $userFound = [];
 
         public function validateEmail($email)
         {
@@ -23,6 +24,25 @@ class User
         }
         
         public function userAvailability()
+        {
+            $sqlGetUser = "SELECT * FROM phpbb_users WHERE username ='" . $this->userName . "'";
+            $sqlGetEmail = "SELECT * FROM phpbb_users WHERE email ='" . $this->email . "'";
+            $result = $this->pdoConn->query($sqlGetUser);
+            $rowCountUser = $result->rowCount();
+            if ($rowCountUser >0) 
+                {
+                    $this->userFound['user'] = 1;
+                }
+            $result = $this->pdoConn->query($sqlGetEmail);
+            $rowCountEmail = $result->rowCount();
+            if ($rowCountEmail >0) 
+                {
+                    $this->userFound['email'] = 1;
+                }
+            return $this->userFound;
+        }
+
+        public function userRegister()
         {
             
         }
