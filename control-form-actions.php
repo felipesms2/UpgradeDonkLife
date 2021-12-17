@@ -19,6 +19,8 @@
             
             $user = new User($pdo);
             $user->email = $email;
+            $user->name = $email;
+            $user->password = $email;
             $user->userLogin = $userName;
             $user->userAvailability();
 
