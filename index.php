@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar</title>
     <?php
+        include "./vendor/autoload.php";
         include "./assets-bunch.php";
     ?>
 </head>
