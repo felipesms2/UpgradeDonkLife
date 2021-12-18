@@ -1,5 +1,6 @@
 <?php
 include "./DBPass.php";
+include "./model-config.php";
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -12,8 +13,8 @@ $_POST['bodyMsg'] = "Bem vindo(a) ". $_POST['personName'] ." para completar seu 
 
 $subjectMSG = $_POST['subject']; 
 $bodyMSG = $_POST['bodyMsg']; 
-$personName = $_POST['personame']; 
-var_dump($_SERVER);
+$personName = $_POST['personName']; 
+echo "<pre>",  var_dump($_SERVER);
 die;
 
 //Load Composer's autoloader
