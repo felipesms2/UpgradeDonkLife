@@ -13,6 +13,7 @@ class User
         public $checkRegister;
         public $userFound = [];
         public $userIdModel = 65;
+        public $userDeactivated = 1;
         public $subjectMSG = "Donklife - Registro de nova conta";
 
         public function validateEmail($email)
@@ -123,7 +124,7 @@ class User
                     user_reminded_time
                 )                    
                 SELECT
-                    user_type,
+                    " . $this->userDeactivated . ",
                     group_id,
                     user_permissions,
                     user_perm_from,
