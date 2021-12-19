@@ -8,6 +8,7 @@
     <?php
         include "./vendor/autoload.php";
         include "./assets-bunch.php";
+        echo "<pre>" ,  var_dump($_SERVER["HTTP_HOST"]) , "</pre>";
     ?>
 </head>
 <body>
