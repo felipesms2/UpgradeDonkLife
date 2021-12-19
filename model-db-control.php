@@ -9,6 +9,7 @@ try {
 catch( PDOException $e) 
 {
     echo "Erro " .$e->getMessage();
+    var_dump($_SERVER["HTTP_HOST"]);
       exit;
 }
 
