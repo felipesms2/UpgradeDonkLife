@@ -7,15 +7,14 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-$_POST['subject'] = "Registro de nova conta";
-$_POST['personName'] = "Felipe";
-$_POST['bodyMsg'] = "Bem vindo(a) ". $_POST['personName'] ." para completar seu cadastro clique aqui";
+// $_POST['subject'] = "Registro de nova conta";
+// $_POST['personName'] = "Felipe";
+// $_POST['bodyMsg'] = "Bem vindo(a) ". $_POST['personName'] ." para completar seu cadastro clique aqui";
 
-$subjectMSG = $_POST['subject']; 
-$bodyMSG = $_POST['bodyMsg']; 
-$personName = $_POST['personName']; 
-echo "<pre>",  var_dump($_SERVER);
-die;
+$subjectMSG = $mailArray['subjectMSG']; 
+$bodyMSG = $mailArray['bodyMSG']; 
+$personName = $mailArray['personName'];
+$mailTo = $mailArray['mailTo'];
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
@@ -55,7 +54,7 @@ try {
     $mail->AltBody = 'Caso não consiga visualizar a mensagem entre diretamente em contato com ' . $userSMTP;
 
     $mail->send();
-    echo 'Message has been sent';
+    //echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
