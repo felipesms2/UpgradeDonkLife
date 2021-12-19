@@ -36,9 +36,9 @@ try {
     
     //Recipients
     $mail->setFrom($userSMTP, 'DonkLife');
-    //$mail->addAddress('felipesms@live.com', 'Felipe');     //Add a recipient
+    $mail->addAddress($mailTo, $personName);     //Add a recipient
     //$mail->addAddress('fmbh.1989@gmail.com');               //Name is optional
-    $mail->addAddress('teste@2fsoft.com');               //Name is optional
+   // $mail->addAddress('teste@2fsoft.com');               //Name is optional
     $mail->addReplyTo($userSMTP, 'Information');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
@@ -51,7 +51,7 @@ try {
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $subjectMSG;
     $mail->Body    = $bodyMSG;
-    $mail->AltBody = 'Caso não consiga visualizar a mensagem entre diretamente em contato com ' . $userSMTP;
+    $mail->AltBody = $bodyMSG . $userSMTP;
 
     $mail->send();
     //echo 'Message has been sent';
