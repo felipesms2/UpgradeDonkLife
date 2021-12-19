@@ -19,7 +19,7 @@
             
             $user = new User($pdo);
             $user->email = $email;
-            $user->name = $email;
+            $user->name = $name;
             $user->password = $email;
             $user->userLogin = $userName;
             $user->userAvailability();
@@ -71,6 +71,7 @@
             if (empty($error)) 
             {
                 http_response_code( 200 );
+                //include "./email.php";
                 $user->register();
                 echo json_encode( [ 'msg' => "ok" ] );
             }
