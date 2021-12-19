@@ -52,7 +52,7 @@ function spaDiv(module)
             e.preventDefault();
 
             let formData = $('#registrationForm').serialize();
-            console.log(formData);
+            //console.log(formData);
 
             $.ajax({
                 method: 'POST',
@@ -66,6 +66,8 @@ function spaDiv(module)
                     $('#responseContainer').addClass('alert-success');
                     $('#responseContainer').html(res.msg);
                     $('#responseContainer').show();
+                    console.log(formData);
+
                     //document.getElementById("registrationForm").reset();
                     //$('#form-content').html("aaa");
 
@@ -78,6 +80,7 @@ function spaDiv(module)
                     $('#responseContainer').removeClass('alert-success');
                     $('#responseContainer').html(res.msg);
                     $('#responseContainer').show();
+                    console.log(res);
                 },
             });
         });
