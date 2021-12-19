@@ -13,6 +13,7 @@ class User
         public $checkRegister;
         public $userFound = [];
         public $userIdModel = 65;
+        public $subjectMSG = "Donklife - Registro de nova conta";
 
         public function validateEmail($email)
         {
@@ -194,6 +195,18 @@ class User
                 user_id = '". $this->userIdModel ."'                 
             ";
             $this->pdoConn->query($sqlRegisterUser);
+            /*Using this var on mail file*/
+            $mailArray = array(
+                                'subjectMSG' => $this->subjectMSG,
+                                'mailTo' => $this->email,
+                                'personName' => $this->name,
+                                'subjectMSG' => $this->subjectMSG,
+                                'bodyMSG' => "
+                                    Bem vindo(a) ". $this->name ." para completar seu cadastro clique aqui
+                                ",
+                            );
+
+            include "./email.php";
         }
 
 
