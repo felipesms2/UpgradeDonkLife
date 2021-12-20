@@ -210,7 +210,12 @@ class User
            // var_dump("<pre>" , $sqlRegisterUser , "</pre>");
            // die;
             $this->pdoConn->exec($sqlRegisterUser);
-            $this->siteBase = $_SERVER["REQUEST_SCHEME"] . '://' . 'localhost/drafts/UpgradeDonkLife/' . $this->fileValidation . ".php?action=checkNewUser&token=" . TOKEN_GENERATED ;
+            $scriptSubfolder = "/drafts/UpgradeDonkLife/";
+            if ($_SERVER["SERVER_NAME"] !="localhost") 
+                {
+                    $scriptSubfolder ="/forum/register/";
+                }
+            $this->siteBase = $_SERVER["REQUEST_SCHEME"] . '://' . ''. $_SERVER['SERVER_NAME'] . $scriptSubfolder . $this->fileValidation . ".php?action=checkNewUser&token=" . TOKEN_GENERATED ;
             /*Using this var on mail file*/
             $mailArray = array(
                                 'subjectMSG' => $this->subjectMSG,
@@ -219,7 +224,7 @@ class User
                                 'subjectMSG' => $this->subjectMSG,
                                 'bodyMSG' => "
                                     Bem vindo(a) ". $this->name ." para completar seu cadastro 
-                                        <a href='".  $this->siteBase ."'>clique aqui</a>
+                                        <a href='" . $this->siteBase . "'>clique aqui</a>
                                     <br>
                                     Caso não esteja visualizando a mensagem copie este link e cole 
                                     no seu navegador
@@ -236,19 +241,25 @@ class User
             $sqlCheckToken = "SELECT 1 FROM phpbb_users WHERE user_type ='1' AND " .
                 "user_actkey='". $this->user_actkey ."'" 
             ;
-
+            
+        $pageParam ="register";
            $resultCheck = $this->pdoConn->query($sqlCheckToken);
            $rowCountCheck = $resultCheck->rowCount();
            if ($rowCountCheck ==0) 
             {
                $generalMsg = false;
+               $_SESSION['mainMsg'] = "Não foi possível validar seu usuário, entre em contato com nosso suporte";
             }    
            else
             {
                 $generalMsg = true;
+                $_SESSION['mainMsg'] = "Usuário confirmado, faça seu login";
+                $sqlUserValidate = "UPDATE phpbb_users SET user_type ='0' WHERE  user_actkey='". $this->user_actkey ."'";
+                $this->pdoConn->query($sqlUserValidate);
+                $pageParam = "login";
             }
             //echo $sqlCheckToken;
-            return $generalMsg;
+            header("location: ./index.php?mode=". $pageParam  ."");
 
         }
 
