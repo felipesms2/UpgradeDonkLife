@@ -234,20 +234,20 @@ class User
         
         {
             $sqlCheckToken = "SELECT 1 FROM phpbb_users WHERE user_type ='1' AND " .
-                "user_actkey='". $this->user_actKey ."'" 
+                "user_actkey='". $this->user_actkey ."'" 
             ;
 
            $resultCheck = $this->pdoConn->query($sqlCheckToken);
            $rowCountCheck = $resultCheck->rowCount();
            if ($rowCountCheck ==0) 
             {
-               $generalMsg = "";
+               $generalMsg = false;
             }    
            else
             {
-                $generalMsg = "";
+                $generalMsg = true;
             }
-            echo $sqlCheckToken;
+            //echo $sqlCheckToken;
             return $generalMsg;
 
         }
