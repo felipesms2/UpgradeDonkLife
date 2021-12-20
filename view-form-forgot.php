@@ -1,7 +1,10 @@
 
-
+    Email
+    <form id="formForgot">
     <input 
         type="text" 
-        class="form-control" 
-        name="email" id="usernameForgot"
+        class="form-control"
+        placeholder="Digite seu email aqui" 
+        name="email" id="emailForgot"
     >
+    </form>

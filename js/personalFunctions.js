@@ -4,7 +4,7 @@ function modifyModalData(metaData)
         console.clear();
         previousUsername =  document.getElementById("username").value;
         $("#form-modal-body").load("view-form-forgot.php", function () {      
-            $("#usernameForgot").val(previousUsername);            
+            $("#usernameForgot").val(previousUsername);
         });
     }
 
@@ -14,7 +14,7 @@ function forgotPassView()
         let metadata =[];
         metadata["title"] = "Enviar Instruções";
         metadata["fileBodyLoad"] = "";
-        metadata["formLoad"] = 
+        metadata["formLoad"] = "";
         modifyModalData(metadata);
     }
 
@@ -43,6 +43,45 @@ function spaDiv(module)
         $("#" + mainReferenceDiv).removeClass("d-none");
         //console.log(mode);     
     }
+
+
+    function callReset() 
+        {
+            let formData = $('#formForgot').serialize();
+
+            $.ajax({
+                method: 'POST',
+                url: 'control-form-actions.php',
+                data: formData,
+                success: function (response) {
+
+                    let res = JSON.parse(response);
+
+                    $('#responseContainer').removeClass('alert-danger');
+                    $('#responseContainer').addClass('alert-success');
+                    $('#responseContainer').html(res.msg);
+                    $('#responseContainer').show();
+                    //console.log(formData);
+                    $('#btnSubmit').prop('disabled', false);
+
+                    //document.getElementById("registrationForm").reset();
+                    //$('#form-content').html("aaa");
+
+                },
+                error: function (response) {
+
+                    let res = JSON.parse(response.responseText);
+
+                    $('#responseContainer').addClass('alert-danger');
+                    $('#responseContainer').removeClass('alert-success');
+                    $('#responseContainer').html(res.msg);
+                    $('#responseContainer').show();
+                    $('#btnSubmit').prop('disabled', false);
+                    console.log(res);
+                },
+            });
+            
+        }
     
     
     $(document).ready( function() {
@@ -66,7 +105,7 @@ function spaDiv(module)
                     $('#responseContainer').addClass('alert-success');
                     $('#responseContainer').html(res.msg);
                     $('#responseContainer').show();
-                    console.log(formData);
+                    //console.log(formData);
                     $('#btnSubmit').prop('disabled', false);
 
                     //document.getElementById("registrationForm").reset();
@@ -86,5 +125,6 @@ function spaDiv(module)
                 },
             });
         });
+        
 
     });
