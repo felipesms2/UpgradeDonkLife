@@ -20,7 +20,7 @@ class User
         public $tokenGenerated;
         public $siteBase;
         public $fileValidation = "UserValidate";
-        public $user_actKey;
+        public $user_actkey;
 
         public function randonToken()
         {
@@ -233,7 +233,23 @@ class User
        public function checkActivation()
         
         {
-               
+            $sqlCheckToken = "SELECT 1 FROM phpbb_users WHERE user_type ='1' AND " .
+                "user_actkey='". $this->user_actKey ."'" 
+            ;
+
+           $resultCheck = $this->pdoConn->query($sqlCheckToken);
+           $rowCountCheck = $resultCheck->rowCount();
+           if ($rowCountCheck ==0) 
+            {
+               $generalMsg = "";
+            }    
+           else
+            {
+                $generalMsg = "";
+            }
+            echo $sqlCheckToken;
+            return $generalMsg;
+
         }
 
 
