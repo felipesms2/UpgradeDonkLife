@@ -14,7 +14,15 @@ class User
         public $userFound = [];
         public $userIdModel = 65;
         public $userDeactivated = 1;
+        public $lastInsertId;
         public $subjectMSG = "Donklife - Registro de nova conta";
+        public $tokenRegister = "ABCDEFGHIJKLMNOPKRSTUVXZabcdefghijklmnopkrstuvxz1234567890";
+        public $tokenGenerated;
+
+        public function randonToken()
+        {
+            return mb_strimwidth(str_shuffle($this->tokenRegister), 0, 32);
+        }
 
         public function validateEmail($email)
         {
@@ -24,6 +32,7 @@ class User
         public function __construct($dbObj)
         {
             $this->pdoConn = $dbObj;
+            define("TOKEN_GENERATED", $this->randonToken());
         }
         
         public function userAvailability()
@@ -182,7 +191,7 @@ class User
                     user_sig_bbcode_uid,
                     user_sig_bbcode_bitfield,
                     user_jabber,
-                    user_actkey,
+                    '". TOKEN_GENERATED ."',
                     reset_token,
                     reset_token_expiration,
                     user_newpasswd,
@@ -195,7 +204,7 @@ class User
             WHERE
                 user_id = '". $this->userIdModel ."'                 
             ";
-            $this->pdoConn->query($sqlRegisterUser);
+            $this->pdoConn->exec($sqlRegisterUser);
             /*Using this var on mail file*/
             $mailArray = array(
                                 'subjectMSG' => $this->subjectMSG,
@@ -204,6 +213,8 @@ class User
                                 'subjectMSG' => $this->subjectMSG,
                                 'bodyMSG' => "
                                     Bem vindo(a) ". $this->name ." para completar seu cadastro clique aqui
+                                    <br>
+                                    token ". TOKEN_GENERATED ."
                                 ",
                             );
 
