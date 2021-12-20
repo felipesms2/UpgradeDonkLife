@@ -1,5 +1,6 @@
 <?php
 
+    session_start();
     //$typeRequest = $_SERVER["REQUEST_SCHEME"];
     //$mainSiteUrl = $_SERVER['HTTP_HOST'];
 
