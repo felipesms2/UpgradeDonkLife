@@ -20,7 +20,7 @@
             $user = new User($pdo);
             $user->email = $email;
             $user->name = $name;
-            $user->password = $email;
+            $user->password = $password;
             $user->userLogin = $userName;
             $user->userAvailability();
 
