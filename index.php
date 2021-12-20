@@ -8,7 +8,13 @@
     <?php
         include "./vendor/autoload.php";
         include "./assets-bunch.php";
+        include "./model-config.php";
         echo "<pre>" ,  var_dump($_SERVER["HTTP_HOST"]) , "</pre>";
+        echo "<pre>" ,  var_dump($_SESSION) , "</pre>";
+        if (isset($_SESSION['mainMsg'])) 
+            {
+                unset($_SESSION['mainMsg']);
+            }
     ?>
 </head>
 <body>

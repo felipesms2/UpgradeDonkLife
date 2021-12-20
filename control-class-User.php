@@ -242,13 +242,15 @@ class User
            if ($rowCountCheck ==0) 
             {
                $generalMsg = false;
+               $_SESSION['mainMsg'] = "Não foi possível validar seu usuário, entre em contato com nosso suporte";
             }    
            else
             {
                 $generalMsg = true;
+                $_SESSION['mainMsg'] = "Usuário confirmado, faça seu login";
             }
             //echo $sqlCheckToken;
-            return $generalMsg;
+            header("location: ./index.php");
 
         }
 

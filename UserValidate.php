@@ -20,7 +20,7 @@ if (isset ($_GET['action']))
                     $token = $_GET['token'];            
                     $user = new User($pdo);                    
                     $user->user_actkey = $token;
-                    echo $user->checkActivation();
+                    $user->checkActivation();
             break;
             
             default:
