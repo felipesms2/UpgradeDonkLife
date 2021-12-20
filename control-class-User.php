@@ -20,6 +20,7 @@ class User
         public $tokenGenerated;
         public $siteBase;
         public $fileValidation = "UserValidate";
+        public $user_actKey;
 
         public function randonToken()
         {
@@ -228,6 +229,13 @@ class User
 
             include "./email.php";
         }
+
+       public function checkActivation()
+        
+        {
+               
+        }
+
 
 
     }
