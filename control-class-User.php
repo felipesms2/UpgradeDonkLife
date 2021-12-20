@@ -236,7 +236,8 @@ class User
             $sqlCheckToken = "SELECT 1 FROM phpbb_users WHERE user_type ='1' AND " .
                 "user_actkey='". $this->user_actkey ."'" 
             ;
-
+            
+        $pageParam ="register";
            $resultCheck = $this->pdoConn->query($sqlCheckToken);
            $rowCountCheck = $resultCheck->rowCount();
            if ($rowCountCheck ==0) 
@@ -248,9 +249,12 @@ class User
             {
                 $generalMsg = true;
                 $_SESSION['mainMsg'] = "Usuário confirmado, faça seu login";
+                $sqlUserValidate = "UPDATE phpbb_users SET user_type ='0' WHERE  user_actkey='". $this->user_actkey ."'";
+                $this->pdoConn->query($sqlUserValidate);
+                $pageParam = "login";
             }
             //echo $sqlCheckToken;
-            header("location: ./index.php");
+            header("location: ./index.php?mode=". $pageParam  ."");
 
         }
 
