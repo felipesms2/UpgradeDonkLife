@@ -50,7 +50,7 @@ function spaDiv(module)
         /*@ Registration start */
         $('#btnSubmit').click( function(e) {
             e.preventDefault();
-
+            $('#btnSubmit').prop('disabled', true);
             let formData = $('#registrationForm').serialize();
             //console.log(formData);
 
@@ -67,6 +67,7 @@ function spaDiv(module)
                     $('#responseContainer').html(res.msg);
                     $('#responseContainer').show();
                     console.log(formData);
+                    $('#btnSubmit').prop('disabled', false);
 
                     //document.getElementById("registrationForm").reset();
                     //$('#form-content').html("aaa");
@@ -80,6 +81,7 @@ function spaDiv(module)
                     $('#responseContainer').removeClass('alert-success');
                     $('#responseContainer').html(res.msg);
                     $('#responseContainer').show();
+                    $('#btnSubmit').prop('disabled', false);
                     console.log(res);
                 },
             });
