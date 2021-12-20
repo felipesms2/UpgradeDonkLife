@@ -209,7 +209,7 @@ class User
            // var_dump("<pre>" , $sqlRegisterUser , "</pre>");
            // die;
             $this->pdoConn->exec($sqlRegisterUser);
-            $this->siteBase = $_SERVER["REQUEST_SCHEME"] . '://' . 'localhost/drafts/UpgradeDonklife/' . $this->fileValidation . ".php?action=checkNewUser&token=" . TOKEN_GENERATED ;
+            $this->siteBase = $_SERVER["REQUEST_SCHEME"] . '://' . 'localhost/drafts/UpgradeDonkLife/' . $this->fileValidation . ".php?action=checkNewUser&token=" . TOKEN_GENERATED ;
             /*Using this var on mail file*/
             $mailArray = array(
                                 'subjectMSG' => $this->subjectMSG,
