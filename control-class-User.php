@@ -18,6 +18,8 @@ class User
         public $subjectMSG = "Donklife - Registro de nova conta";
         public $tokenRegister = "ABCDEFGHIJKLMNOPKRSTUVXZabcdefghijklmnopkrstuvxz1234567890";
         public $tokenGenerated;
+        public $siteBase;
+        public $fileValidation = "UserValidate";
 
         public function randonToken()
         {
@@ -204,7 +206,10 @@ class User
             WHERE
                 user_id = '". $this->userIdModel ."'                 
             ";
+           // var_dump("<pre>" , $sqlRegisterUser , "</pre>");
+           // die;
             $this->pdoConn->exec($sqlRegisterUser);
+            $this->siteBase = $_SERVER["REQUEST_SCHEME"] . '://' . 'localhost/drafts/UpgradeDonklife/' . $this->fileValidation . ".php?action=checkNewUser&token=" . TOKEN_GENERATED ;
             /*Using this var on mail file*/
             $mailArray = array(
                                 'subjectMSG' => $this->subjectMSG,
@@ -212,9 +217,12 @@ class User
                                 'personName' => $this->name,
                                 'subjectMSG' => $this->subjectMSG,
                                 'bodyMSG' => "
-                                    Bem vindo(a) ". $this->name ." para completar seu cadastro clique aqui
+                                    Bem vindo(a) ". $this->name ." para completar seu cadastro 
+                                        <a href='".  $this->siteBase ."'>clique aqui</a>
                                     <br>
-                                    token ". TOKEN_GENERATED ."
+                                    Caso não esteja visualizando a mensagem copie este link e cole 
+                                    no seu navegador
+                                     ". $this->siteBase ."
                                 ",
                             );
 
