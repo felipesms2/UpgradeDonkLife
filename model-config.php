@@ -7,6 +7,8 @@
     {
         $_SERVER['HTTP_HOST'] = "";
     }
-    define("SCRIPT_FOLDER", $_SERVER['HTTP_HOST']);
+    define("SCRIPT_FOLDER", $_SERVER['HTTP_HOST'] . "/drafts" . "/UpgradeDonkLife");
+
+
 
     
