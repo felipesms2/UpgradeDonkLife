@@ -22,11 +22,18 @@ if (isset ($_GET['action']))
                     $user->user_actkey = $token;
                     $user->checkActivation();
             break;
+
+            case "resetPassword":
+                echo $action;
+                $user_actkey = $_GET['token'];
+                break;
             
             default:
-                redir();
+                
             break;
         }
+        
+        
     }
 else
 
