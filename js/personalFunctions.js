@@ -1,7 +1,7 @@
 function modifyModalData(metaData) 
     {
         $("#modalTitle").html(metaData['title']);
-        console.clear();
+        //console.clear();
         previousUsername =  document.getElementById("username").value;
         $("#form-modal-body").load("view-form-forgot.php", function () {      
             $("#usernameForgot").val(previousUsername);
@@ -47,7 +47,10 @@ function spaDiv(module)
 
     function callReset() 
         {
+            $('#alertReset').html("Aguarde...");
+            $('#modalBtnSave').prop('disabled', true);
             let formData = $('#formForgot').serialize();
+            console.log(formData);
 
             $.ajax({
                 method: 'POST',
@@ -57,12 +60,12 @@ function spaDiv(module)
 
                     let res = JSON.parse(response);
 
-                    $('#responseContainer').removeClass('alert-danger');
-                    $('#responseContainer').addClass('alert-success');
-                    $('#responseContainer').html(res.msg);
-                    $('#responseContainer').show();
+                    //$('#responseContainer').removeClass('alert-danger');
+                    //$('#responseContainer').addClass('alert-success');
+                    $('#alertReset').html(res.msg);
+                    //$('#responseContainer').show();
                     //console.log(formData);
-                    $('#btnSubmit').prop('disabled', false);
+                    $('#modalBtnSave').prop('disabled', false);
 
                     //document.getElementById("registrationForm").reset();
                     //$('#form-content').html("aaa");
@@ -72,11 +75,11 @@ function spaDiv(module)
 
                     let res = JSON.parse(response.responseText);
 
-                    $('#responseContainer').addClass('alert-danger');
-                    $('#responseContainer').removeClass('alert-success');
+                    // $('#responseContainer').addClass('alert-danger');
+                    // $('#responseContainer').removeClass('alert-success');
                     $('#responseContainer').html(res.msg);
                     $('#responseContainer').show();
-                    $('#btnSubmit').prop('disabled', false);
+                    $('#modalBtnSave').prop('disabled', false);
                     console.log(res);
                 },
             });
