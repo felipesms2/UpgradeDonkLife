@@ -2,6 +2,7 @@
 
     include "./model-db-control.php";
     include "./control-class-User.php";
+    $error ="";
 
     $postString = implode(",", $_POST);
     $action = $_POST['action'];    
@@ -85,12 +86,34 @@
         break;
 
         case 'askReset':
-
+            $email = $_POST['emailForgot'];
             $user = new User($pdo);
+            $user->email = $email;
+
+            if (empty($email)) 
+            {
+                $error  = "<li><strong>Email não pode ficar vazio</strong></li>" ;    # code...
+            }
+            if ($user->validateEmail($email)==false and !empty($email)) 
+                {
+                    $itemErrror = "<li>Formato de email incorreto ( <strong>$email</strong> )</li>";    
+                    $error .= $itemErrror;
+                }
+
+                if (empty($error)) 
+                {
+                    $resetStatus  = $user->passReset();
+                    http_response_code( 200 );
+                    //include "./email.php";
+                    echo json_encode( [ 'msg' => $resetStatus ] );
+                }
+                    
+                else
+                {
+                    http_response_code( 406 );
+                    echo json_encode( [ 'msg' => $error ] );
+                }
             
-            $emailForgot = $_POST['emailForgot'];
-            http_response_code(200);
-            echo json_encode( [ 'msg' => $emailForgot ] );
         break;
         
         default:
