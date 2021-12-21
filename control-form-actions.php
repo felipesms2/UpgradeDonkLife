@@ -83,6 +83,15 @@
             }
             
         break;
+
+        case 'askReset':
+
+            $user = new User($pdo);
+            
+            $emailForgot = $_POST['emailForgot'];
+            http_response_code(200);
+            echo json_encode( [ 'msg' => $emailForgot ] );
+        break;
         
         default:
         
