@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
         <div id="btnModalAction">
           <button type="button" class="btn btn-primary"  onclick="callReset()" id='modalBtnSave'>Resetar Senha</button>
         </div>
