@@ -1,6 +1,6 @@
 
     Email
-    <form id="formForgot">
+    <form id="formForgot" method="post" action="control-form-actions.php">
     <input type="hidden" name="action" id="action" value="askReset">
     <input 
         type="text" 

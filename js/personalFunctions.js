@@ -77,8 +77,8 @@ function spaDiv(module)
 
                     // $('#responseContainer').addClass('alert-danger');
                     // $('#responseContainer').removeClass('alert-success');
-                    $('#responseContainer').html(res.msg);
-                    $('#responseContainer').show();
+                    $('#alertReset').html(res.msg);
+                    $('#alertReset').show();
                     $('#modalBtnSave').prop('disabled', false);
                     console.log(res);
                 },
