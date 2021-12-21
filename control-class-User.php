@@ -263,6 +263,31 @@ class User
 
         }
 
+        public function passReset()
+        {
+            $sqlCheckEmail = "SELECT 1 FROM phpbb_users WHERE user_email='". $this->email ."' ";
+            $resultCheck = $this->pdoConn->query($sqlCheckEmail);
+            $rowCountCheck = $resultCheck->rowCount();
+            if ($rowCountCheck ==0) 
+            {
+                $resetStatus = "Não foi possível econtrar no sistema o email informado  (<strong>$this->email</strong> )
+                    . Por favor entre em contato com nosso suporte caso tenha certeza que se cadastrou com este email.
+                    Se estiver incorreto, digite novamente 
+                ";
+            }
+            else
+            {
+                $sqlToken = "UPDATE phpbb_users SET 
+                    reset_token ='".$this->randonToken()."', 
+                    reset_token_expiration = unix_timestamp(date_add(now(), interval 10 minute)),
+                    user_newpasswd = '1'
+                 WHERE user_email ='". $this->email ."'";
+                $resetStatus = "Email enviado com sucesso para <strong>". $this->email ."</strong>. Lembrando que você tem 10 minutos para efetuar a troca, caso contrário sera necessário solicitar nova alteração";
+            }
+            return $resetStatus;
+            //return $sqlToken;
+        }
+
 
 
     }
