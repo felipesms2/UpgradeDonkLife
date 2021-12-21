@@ -221,7 +221,6 @@ class User
                                 'subjectMSG' => $this->subjectMSG,
                                 'mailTo' => $this->email,
                                 'personName' => $this->name,
-                                'subjectMSG' => $this->subjectMSG,
                                 'bodyMSG' => "
                                     Bem vindo(a) ". $this->name ." para completar seu cadastro 
                                         <a href='" . $this->siteBase . "'>clique aqui</a>
@@ -277,15 +276,41 @@ class User
             }
             else
             {
+                
+                $scriptSubfolder = "/drafts/UpgradeDonkLife/";
+                if ($_SERVER["SERVER_NAME"] !="localhost") 
+                {
+                    $scriptSubfolder ="/forum/register/";
+                }
+                $this->siteBase = $_SERVER["REQUEST_SCHEME"] . '://' . ''. $_SERVER['SERVER_NAME'] . $scriptSubfolder . $this->fileValidation . ".php?action=resetPassword&token=" . TOKEN_GENERATED ;
                 $sqlToken = "UPDATE phpbb_users SET 
-                    reset_token ='".$this->randonToken()."', 
+                    reset_token ='". TOKEN_GENERATED ."', 
                     reset_token_expiration = unix_timestamp(date_add(now(), interval 10 minute)),
                     user_newpasswd = '1'
                  WHERE user_email ='". $this->email ."'";
+                 $this->pdoConn->query($sqlToken);
                 $resetStatus = "Email enviado com sucesso para <strong>". $this->email ."</strong>. Lembrando que você tem 10 minutos para efetuar a troca, caso contrário sera necessário solicitar nova alteração";
+                $mailArray = array(
+                    'subjectMSG' => "Donklife - Solicitação de nova senha",
+                    'mailTo' => $this->email,
+                    'personName' => $this->email,
+                    'bodyMSG' => "
+                        Olá, recebemos uma solicitação para resetar a senha do usuário ". $this->email ."
+                            <a href='". $this->siteBase ."'>clique aqui</a>
+                        <br>
+                        Caso não esteja visualizando a mensagem copie este link e cole 
+                        no seu navegador
+                         ". $this->siteBase ."
+                    ",
+                );
+
+                include "./email.php";
+
             }
             return $resetStatus;
-            //return $sqlToken;
+         //   return $this->siteBase;
+         //return $sqlToken;
+            
         }
 
 
