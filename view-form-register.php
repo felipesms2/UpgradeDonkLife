@@ -24,7 +24,7 @@
                     id="btnSubmit"
                     >Registrar
                 </button>
-                <button type="submit" formaction="./control-form-actions.php">Enviar</button>
+                
             </div>
             <input type="checkbox" name="" id=""> 
                 <small>Aceito os termos de uso da plataforma</small> 
