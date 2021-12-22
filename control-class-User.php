@@ -34,7 +34,7 @@ class User
             $stringMethod = "";
             if ($resultCheckValid->rowCount()>0) 
             {
-                $stringMethod = "resetauth";
+                $stringMethod = "resetAuth";
                 $_SESSION['tokenSecure'] = $this->validToken;
             }
 

@@ -9,6 +9,12 @@
         include "./vendor/autoload.php";
         include "./assets-bunch.php";
         include "./model-config.php";
+
+        if (isset($_GET['mode'])) 
+            {
+              $mode = $_GET['mode'];   
+            }
+
         echo "<pre>" ,  var_dump($_SERVER["HTTP_HOST"]) , "</pre>";
         echo "<pre>" ,  var_dump($_SESSION) , "</pre>";
         if (isset($_SESSION['mainMsg'])) 
@@ -23,9 +29,22 @@
     ?>
     <div class="container border mt-5">
         <div id="form-content" class="mb-2">
-            <?php include "./view-form-register.php"?>
+            <?php
+            if ($mode=="resetAuth")
+                {
+                    include "./view-form-reset-auth.php";
+                }
+            else
+            {include "./view-form-register.php";}
+            ?>
         </div>
-        <?php include "./view-adittional-login-info.php"?>
+        <?php
+                    if ($mode !="resetAuth") 
+                    {
+                        include "./view-adittional-login-info.php";
+                    }  
+            
+        ?>
         <div id="responseContainer">
             
         </div>
