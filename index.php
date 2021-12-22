@@ -29,6 +29,7 @@
         // echo "<pre>" ,  var_dump($_SESSION) , "</pre>";
         if (isset($_SESSION['mainMsg'])) 
             {
+                $msgDisplay = $_SESSION['mainMsg'];
                 unset($_SESSION['mainMsg']);
             }
     ?>
@@ -44,7 +45,7 @@
                 <img src="./img/logo.jpg" alt="logo">
               </div>
               <h4>Vamos Começar!</h4>
-              <h6 class="font-weight-light">Faça seu cadastro para prosseguir</h6>
+              <h6 id="subTitle" class="font-weight-light">Faça seu cadastro para prosseguir</h6>
 
               <!-- Start form Personal -->
               <?php

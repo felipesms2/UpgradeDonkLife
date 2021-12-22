@@ -132,12 +132,9 @@ function spaDiv(module)
             
         }
     
-    
-    $(document).ready( function() {
- 
-        /*@ Registration start */
-        $('#btnSubmit').click( function(e) {
-            e.preventDefault();
+
+        function registerSubmit() 
+        {
             $('#btnSubmit').prop('disabled', true);
             let formData = $('#registrationForm').serialize();
             //console.log(formData);
@@ -173,7 +170,8 @@ function spaDiv(module)
                     console.log(res);
                 },
             });
-        });
-        
+            
+        }
 
-    });
+ 
+

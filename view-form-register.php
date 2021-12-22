@@ -20,8 +20,10 @@
 
             <div class="d-grid gap-2 mt-2 mb-2">
                 <button 
+                    type="button"
                     class="btn btn-primary btn-block"
                     id="btnSubmit"
+                    onclick="registerSubmit()"
                     >Registrar
                 </button>
                 
