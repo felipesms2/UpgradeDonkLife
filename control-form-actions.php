@@ -2,6 +2,8 @@
 
     include "./model-db-control.php";
     include "./control-class-User.php";
+    include "./model-config.php";
+    
     $error ="";
 
     $postString = implode(",", $_POST);
@@ -102,7 +104,8 @@
 
                 if (empty($error)) 
                 {
-                    $resetStatus  = $user->passReset();
+
+                                $resetStatus  = $user->passReset();
                     http_response_code( 200 );
                     //include "./email.php";
                     echo json_encode( [ 'msg' => $resetStatus ] );
@@ -113,8 +116,52 @@
                     http_response_code( 406 );
                     echo json_encode( [ 'msg' => $error ] );
                 }
-            
         break;
+
+        case 'resetConfirmValidation':
+            $password = $_POST['password'];
+            $passwordConfirm = $_POST['passwordConfirm'];
+            if (empty($password)) 
+                {
+                    $error .= "<li>Senha não pode ficar vazia</li>";
+                }
+
+            if (empty($passwordConfirm)) 
+                {
+                    $error .= "<li>Confirmação de senha ausente</li>";
+                }
+            if ($password !== $passwordConfirm) 
+                {
+                    $error .= "<li>Senha e confirmação de senha devem ser iguais</li>";
+                }
+            if (strlen($password)<6) 
+                {
+                    $error .= "<li>Senha não pode ter menos de 6 caracteres</li>";
+                }
+
+                if (empty($error)) 
+                {
+                    http_response_code( 200 );
+                    //include "./email.php";
+                    echo json_encode( [ 'msg' => "Redirecionando, aguarde..." ] );
+                }
+                    
+                else
+                {
+                    http_response_code( 406 );
+                    echo json_encode( [ 'msg' => $error ] );
+                }
+            
+            break;
+
+        case 'resetConfirm':
+            // echo "<pre>" , var_dump($_POST) , var_dump($_SESSION) , "</pre>";
+            $user = new User($pdo);
+            $user->password = $_POST["password"];
+            $user->validToken = $_SESSION["tokenSecure"];
+            // echo $user->resetAuth()["mainMsg"];
+            header("location: index.php");
+            break;
         
         default:
         

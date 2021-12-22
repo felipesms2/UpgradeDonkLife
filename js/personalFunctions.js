@@ -45,6 +45,8 @@ function spaDiv(module)
     }
 
 
+
+
     function callReset() 
         {
             $('#alertReset').html("Aguarde...");
@@ -80,6 +82,50 @@ function spaDiv(module)
                     $('#alertReset').html(res.msg);
                     $('#alertReset').show();
                     $('#modalBtnSave').prop('disabled', false);
+                    console.log(res);
+                },
+            });
+            
+        }
+
+        function resetAuth() 
+        {
+            $('#responseContainer').html("Aguarde...");
+            $('#action').val("resetConfirmValidation");
+            $('#btnResetAuth').prop('disabled', true);
+            let formData = $('#resetAuth').serialize();
+            console.log(formData);
+
+            $.ajax({
+                method: 'POST',
+                url: 'control-form-actions.php',
+                data: formData,
+                success: function (response) {
+
+                    let res = JSON.parse(response);
+
+                    //$('#responseContainer').removeClass('alert-danger');
+                    //$('#responseContainer').addClass('alert-success');
+                    $('#responseContainer').html(res.msg);
+                    //$('#responseContainer').show();
+                    //console.log(formData);
+                    $('#btnResetAuth').prop('disabled', false);
+                    $('#action').val("resetConfirm");
+                    $('#resetAuth').submit();
+
+                    //document.getElementById("registrationForm").reset();
+                    //$('#form-content').html("aaa");
+
+                },
+                error: function (response) {
+
+                    let res = JSON.parse(response.responseText);
+
+                    // $('#responseContainer').addClass('alert-danger');
+                    // $('#responseContainer').removeClass('alert-success');
+                    $('#responseContainer').html(res.msg);
+                    $('#responseContainer').show();
+                    $('#btnResetAuth').prop('disabled', false);
                     console.log(res);
                 },
             });

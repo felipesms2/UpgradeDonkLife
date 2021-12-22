@@ -41,6 +41,25 @@ class User
             header("location: index.php?mode=". $stringMethod ."");
         }
 
+        public function resetAuth()
+        {
+            $sqlResetAuth = "
+            UPDATE 
+                                phpbb_users 
+                            SET 
+                                user_password = MD5('". $this->password ."') 
+                            WHERE 
+                                reset_token = '".$this->validToken."' 
+                            AND
+                                from_unixtime(reset_token_expiration) >=NOW()
+            ";
+
+            $this->pdoConn->query($sqlResetAuth);
+            //return "Senha alterada com sucesso";
+            $_SESSION["mainMsg"] = "Senha alterada com sucesso, faça seu login abaixo";
+            return $_SESSION;
+        }
+
         public function validateEmail($email)
         {
             return filter_var($email, FILTER_VALIDATE_EMAIL);
