@@ -37,6 +37,10 @@ class User
                 $stringMethod = "resetAuth";
                 $_SESSION['tokenSecure'] = $this->validToken;
             }
+            else
+            {
+                $_SESSION['mainMsg'] = "Link para reset de senha expirado ou inválido, por favor envie uma nova solicitação";
+            }
 
             header("location: index.php?mode=". $stringMethod ."");
         }
@@ -47,17 +51,18 @@ class User
             UPDATE 
                                 phpbb_users 
                             SET 
-                                user_password = MD5('". $this->password ."') 
+                                user_password = MD5('". $this->password ."'),
+                                reset_token_expiration = unix_timestamp(),
+                                reset_token = '". TOKEN_GENERATED ."' 
                             WHERE 
                                 reset_token = '".$this->validToken."' 
                             AND
                                 from_unixtime(reset_token_expiration) >=NOW()
             ";
-
             $this->pdoConn->query($sqlResetAuth);
             //return "Senha alterada com sucesso";
             $_SESSION["mainMsg"] = "Senha alterada com sucesso, faça seu login abaixo";
-            return $_SESSION;
+            //  return $_SESSION;
         }
 
         public function validateEmail($email)

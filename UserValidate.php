@@ -28,7 +28,6 @@ if (isset ($_GET['action']))
                 $user = new User($pdo);
                 $user->validToken = $_GET['token'];
                 echo $user->resetConfirm();
-    
                 $user_actkey = $_GET['token'];
                 break;
             
