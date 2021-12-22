@@ -3,7 +3,7 @@
 <div class="mb-2">
         <small id='additionalText'>Não tem uma conta?</small>
             <button 
-                class="btn btn-info" 
+                class="btn btn-block border" 
                 onclick="spaDiv('register'); displayAdd('register');"
                 id="additionalTextButton"
                 >Cadastrar</button>
@@ -14,7 +14,7 @@
     <div class="mb-2">
         <small id='additionalText'>Já tem uma conta?</small>
             <button 
-                class="btn btn-info" 
+                class="btn border btn-block" 
                 onclick="spaDiv('login'); displayAdd('login');"
                 id="additionalTextButton"
                 >Entrar</button>
