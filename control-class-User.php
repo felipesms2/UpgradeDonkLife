@@ -21,10 +21,24 @@ class User
         public $siteBase;
         public $fileValidation = "UserValidate";
         public $user_actkey;
+        public $validToken;
 
         public function randonToken()
         {
             return mb_strimwidth(str_shuffle($this->tokenRegister), 0, 32);
+        }
+        public function resetConfirm()
+        {
+            $sqlCheckValidToken= "SELECT 1 FROM phpbb_users WHERE reset_token ='". $this->validToken ."' AND from_unixtime(reset_token_expiration) >=NOW();";
+            $resultCheckValid = $this->pdoConn->query($sqlCheckValidToken);
+            $stringMethod = "";
+            if ($resultCheckValid->rowCount()>0) 
+            {
+                $stringMethod = "resetauth";
+                $_SESSION['tokenSecure'] = $this->validToken;
+            }
+
+            header("location: index.php?mode=". $stringMethod ."");
         }
 
         public function validateEmail($email)

@@ -24,7 +24,11 @@ if (isset ($_GET['action']))
             break;
 
             case "resetPassword":
-                echo $action;
+                //echo $action;
+                $user = new User($pdo);
+                $user->validToken = $_GET['token'];
+                echo $user->resetConfirm();
+    
                 $user_actkey = $_GET['token'];
                 break;
             
