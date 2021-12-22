@@ -14,6 +14,7 @@
             {
               $mode = $_GET['mode'];   
             }
+        else $mode = null;
 
         echo "<pre>" ,  var_dump($_SERVER["HTTP_HOST"]) , "</pre>";
         echo "<pre>" ,  var_dump($_SESSION) , "</pre>";
