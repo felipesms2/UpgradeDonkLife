@@ -6,6 +6,7 @@
 class System
 {
     public $defaultStartForm;
+    public $addiTionalFooter;
     public function setForm()
     {
         switch ($this->defaultStartForm) 
@@ -16,10 +17,23 @@ class System
             case 'login':
                 include "./view-form-login.php";
                 break;
-            
             default:
                 include "./view-form-register.php";
                 break;
         }
     }
+    public function setAdditional()
+    {
+        if ($this->defaultStartForm !="login") 
+        {
+            $this->addiTionalFooter = "register";
+        }
+        else
+        {
+            $this->addiTionalFooter = "login";
+        }
+
+        return $this->addiTionalFooter;
+    }
+    
 }

@@ -74,6 +74,10 @@
                     }  
             
         ?>
+        <script>
+          //alert("<?=$system->setAdditional()?>");
+          displayAdd("<?=$system->setAdditional()?>");
+        </script>
             <div id="responseContainer" class="text-center">
             </div>
           </div>
