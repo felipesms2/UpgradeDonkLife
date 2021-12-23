@@ -12,7 +12,8 @@
     </form>
 
     <script>
-        avoidEnter();
+        enteranother();
+        //avoidEnter();
     </script>
 
     <div id="alertReset" class ="text-center mt-2">

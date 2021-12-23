@@ -185,3 +185,16 @@ function avoidEnter()
       });
         
 }
+
+function enteranother() 
+{
+
+    $('#formForgot').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            $('#modalBtnSave').click();
+            return false;
+            alert('You pressed a "enter" key in textbox');  
+        }
+    });
+}
