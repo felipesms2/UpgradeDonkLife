@@ -160,8 +160,8 @@
             $user = new User($pdo);
             $user->password = $_POST["password"];
             $user->validToken = $_SESSION["tokenSecure"];
-            echo $user->resetAuth();
-            header("location: index.php");
+            $user->resetAuth();
+           
             break;
         
         default:

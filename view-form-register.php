@@ -21,8 +21,9 @@
             <div class="d-grid gap-2 mt-2 mb-2">
                 <button 
                     type="button"
-                    class="btn btn-primary btn-block"
+                    class="btn btn-block btn-info"
                     id="btnSubmit"
+                    style="background-color: #578733; border-color: #578733; color:white"
                     onclick="registerSubmit()"
                     >Registrar
                 </button>

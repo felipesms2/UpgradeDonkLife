@@ -62,6 +62,8 @@ class User
             $this->pdoConn->query($sqlResetAuth);
             //return "Senha alterada com sucesso";
             $_SESSION["mainMsg"] = "Senha alterada com sucesso, faça seu login abaixo";
+            $pageParam ="login";
+            $this->redirParam($pageParam);
             //  return $_SESSION;
         }
 
@@ -297,8 +299,12 @@ class User
             }
             //echo $sqlCheckToken;
             //echo $generalMsg;
-            header("location: ./index.php?mode=". $pageParam  ."");
+            $this->redirParam($pageParam);
 
+        }
+        public function redirParam($param)
+        {
+            header("location: ./index.php?mode=". $param  ."");
         }
 
         public function passReset()
