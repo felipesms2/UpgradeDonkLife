@@ -296,6 +296,7 @@ class User
                 $pageParam = "login";
             }
             //echo $sqlCheckToken;
+            //echo $generalMsg;
             header("location: ./index.php?mode=". $pageParam  ."");
 
         }

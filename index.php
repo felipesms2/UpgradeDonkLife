@@ -27,11 +27,15 @@
 
         // echo "<pre>" ,  var_dump($_SERVER["HTTP_HOST"]) , "</pre>";
         // echo "<pre>" ,  var_dump($_SESSION) , "</pre>";
+        $displayDivMsg = "d-none";
+        $msgDisplay  = "";
         if (isset($_SESSION['mainMsg'])) 
             {
                 $msgDisplay = $_SESSION['mainMsg'];
                 unset($_SESSION['mainMsg']);
+                $displayDivMsg = "";
             }
+
     ?>
 
 
@@ -51,12 +55,25 @@
               <?php
                  include "./view-generic-modal.php";
               ?>
-    <div class="container border mt-5">
+    <div class="container border mt-3">
         <div id="form-content" class="mb-2">
+        <div class="alert alert-info <?=$displayDivMsg?>">
+          <?=$msgDisplay?>
+       </div>
             <?php
+            switch ($mode) 
+            {
+              case 'resetAuth':
+                include "./view-form-reset-auth.php";
+                break;
+              
+              default:
+                # code...
+                break;
+            }
             if ($mode=="resetAuth")
                 {
-                    include "./view-form-reset-auth.php";
+                    
                 }
             else
             {include "./view-form-register.php";}
