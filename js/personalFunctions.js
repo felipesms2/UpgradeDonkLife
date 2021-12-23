@@ -30,6 +30,7 @@ function spaDiv(module)
 
     function displayAdd(mode) 
     {
+        $("#responseContainer").hide();
         $("#additionalRole").val(mode);
         mainReferenceDiv = "footerRegister";
         secondaryReferenceDiv = "footerLogin";

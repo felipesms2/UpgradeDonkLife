@@ -41,8 +41,8 @@ class User
             {
                 $_SESSION['mainMsg'] = "Link para reset de senha expirado ou inválido, por favor envie uma nova solicitação";
             }
-
-            header("location: index.php?mode=". $stringMethod ."");
+            $pageParam = "login";
+            $this->redirParam($pageParam);
         }
 
         public function resetAuth()

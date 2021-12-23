@@ -49,8 +49,8 @@
               <div class="brand-logo">
                 <img src="./img/logo.jpg" alt="logo">
               </div>
-              <h4>Vamos Começar!</h4>
-              <h6 id="subTitle" class="font-weight-light">Faça seu cadastro para prosseguir</h6>
+              <h4>Bem Vindo!</h4>
+              <h6 id="subTitle" class="font-weight-light">Preencha os campos abaixo</h6>
 
               <!-- Start form Personal -->
               <?php
