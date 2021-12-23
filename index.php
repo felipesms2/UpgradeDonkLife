@@ -18,6 +18,7 @@
         include "./vendor/autoload.php";
         include "./assets-bunch.php";
         include "./model-config.php";
+        include "./control-class-System.php";
 
         if (isset($_GET['mode'])) 
             {
@@ -61,22 +62,9 @@
           <?=$msgDisplay?>
        </div>
             <?php
-            switch ($mode) 
-            {
-              case 'resetAuth':
-                include "./view-form-reset-auth.php";
-                break;
-              
-              default:
-                # code...
-                break;
-            }
-            if ($mode=="resetAuth")
-                {
-                    
-                }
-            else
-            {include "./view-form-register.php";}
+              $system = new System();
+              $system->defaultStartForm = $mode;
+              $system->setForm();
             ?>
         </div>
         <?php
