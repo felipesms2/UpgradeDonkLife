@@ -69,7 +69,7 @@
                     }  
             
         ?>
-            <div id="responseContainer">
+            <div id="responseContainer" class="text-center">
             </div>
           </div>
         </div>

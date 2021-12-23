@@ -76,7 +76,8 @@
                 http_response_code( 200 );
                 //include "./email.php";
                 $user->register();
-                echo json_encode( [ 'msg' => "ok" ] );
+                $msgSuccess = "Usuário <strong>$userName</strong> foi criado com sucesso, verifique sua caixa de entrada ou spam em <strong>$email</strong>";
+                echo json_encode( [ 'msg' => $msgSuccess ] );
             }
                 
             else
@@ -105,7 +106,7 @@
                 if (empty($error)) 
                 {
 
-                                $resetStatus  = $user->passReset();
+                    $resetStatus  = $user->passReset();
                     http_response_code( 200 );
                     //include "./email.php";
                     echo json_encode( [ 'msg' => $resetStatus ] );
