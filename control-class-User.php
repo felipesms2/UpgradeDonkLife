@@ -34,14 +34,15 @@ class User
             $stringMethod = "";
             if ($resultCheckValid->rowCount()>0) 
             {
-                $stringMethod = "resetAuth";
+                $pageParam = "resetAuth";
                 $_SESSION['tokenSecure'] = $this->validToken;
             }
             else
             {
                 $_SESSION['mainMsg'] = "Link para reset de senha expirado ou inválido, por favor envie uma nova solicitação";
+                $pageParam = "login";
             }
-            $pageParam = "login";
+            
             $this->redirParam($pageParam);
         }
 

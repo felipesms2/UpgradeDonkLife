@@ -27,8 +27,7 @@ if (isset ($_GET['action']))
                 //echo $action;
                 $user = new User($pdo);
                 $user->validToken = $_GET['token'];
-                echo $user->resetConfirm();
-                $user_actkey = $_GET['token'];
+                $user->resetConfirm();
                 break;
             
             default:
@@ -41,5 +40,5 @@ if (isset ($_GET['action']))
 else
 
     {
-        redir();
+       // redir();
     }
