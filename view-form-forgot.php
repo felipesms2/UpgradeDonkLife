@@ -8,8 +8,12 @@
         placeholder="Digite seu email aqui" 
         name="emailForgot" id="emailForgot"
     >
+    
     </form>
 
+    <script>
+        avoidEnter();
+    </script>
+
     <div id="alertReset" class ="text-center mt-2">
-        Teste de texto
     </div>
