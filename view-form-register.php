@@ -13,6 +13,12 @@
             <input type="email" name="email" class="form-control">
             <label for="">Usuário</label>
             <input type="text" name="userName" class="form-control">
+            <label for="">DDD</label>
+            <select class="form-control">
+                <option value="">DDD</option>
+            </select>
+            <label for="">Número do telefone</label>
+            <input type="text" class="form-control">
             <label for="">Senha</label>
             <input type="password" name="password" class="form-control">
             <label for="">Confirmar Senha</label>
