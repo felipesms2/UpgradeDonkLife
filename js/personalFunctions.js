@@ -216,21 +216,35 @@ function jsonArray(urlParam) {
 }
 
 
-function fillSelect(objId, listItens, defaultOption="", counter) 
+function fillSelect(objId, listItens, defaultOption=["", "Selecione"]) 
     {
-        idInsert = listItens[0];
-        labelOption = listItens[0];
+        
+        
+        counter = 0;
+
+        //alert(listItens.length);
+        
         
         if (counter===0) 
             {
-                $("#" + objId).append(new Option("", "Selecione"));
+                $("#" + objId).append(new Option(defaultOption[1], defaultOption[0]));
             }
 
-        if (idInsert!=defaultOption) 
-        {
-            $("#" + objId).append(new Option(idInsert, labelOption));
-            
-        }  
+            for(var index in listItens)
+            {
+                idInsert =  index
+                labelOption = listItens[index];
+                console.log(labelOption);
+                if (idInsert!=defaultOption[counter]) 
+                {
+                    $("#" + objId).append(new Option(idInsert + " - " + labelOption, labelOption));            
+                }  
+                counter++;
+            }
+
+
+
+        //console.log(listItens);
 
     }
 

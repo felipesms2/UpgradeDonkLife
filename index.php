@@ -90,8 +90,11 @@
 
   <script>
     
-    let regionalCodeBR = <?=$system->jsonDisplayDOM("./ressources/ddd-list.json");?>;
-    
+    var regionalCodeBR = <?=$system->jsonDisplayDOM("./ressources/ddd-list.json");?>;
+    console.log(regionalCodeBR);
+    //regionalCodeBR = Object.values(regionalCodeBR);  /*Converting object to array*/
+    let defaultOption = ["", "Selecione"];
+    fillSelect("codeArea", regionalCodeBR, defaultOption);
     
   </script>
   

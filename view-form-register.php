@@ -14,8 +14,7 @@
             <label for="">Usuário</label>
             <input type="text" name="userName" class="form-control">
             <label for="">DDD</label>
-            <select class="form-control" id="codeArea">
-                
+            <select class="form-control" id="codeArea" placeholder="Escolha DDD">
             </select>
             <label for="">Número do telefone</label>
             <input type="text" class="form-control">
