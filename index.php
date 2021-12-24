@@ -87,13 +87,11 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- base:js -->
 
-  <!-- endinject -->
-  <!-- inject:js -->
-
-  <!-- endinject -->
+  <script>
+    jsonArray("./ressources/ddd-list.json");    
+  </script>
+  
 </body>
 
 </html>

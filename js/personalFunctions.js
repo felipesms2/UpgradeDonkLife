@@ -198,3 +198,35 @@ function enteranother()
         }
     });
 }
+
+function jsonArray(urlParam) {
+    $.getJSON( urlParam, function( data ) {
+        var itemClean = []
+        counter = 0;
+        $.each( data, function( key, val ) {
+        itemClean.push([key, val]);
+        // fillSelect()
+        });
+        // console.log(itemClean);
+        
+        return itemClean;
+        });
+}
+
+function fillSelect(objId, listItens, defaultOption="", counter) 
+    {
+        idInsert = listItens[0];
+        labelOption = listItens[0];
+        
+        if (counter===0) 
+            {
+                $("#" + objId).append(new Option("", "Selecione"));
+            }
+
+        if (idInsert!=defaultOption) 
+        {
+            $("#" + objId).append(new Option(idInsert, labelOption));
+            
+        }  
+
+    }
