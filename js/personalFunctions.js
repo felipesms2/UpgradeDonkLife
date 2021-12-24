@@ -199,19 +199,22 @@ function enteranother()
     });
 }
 
+var itemClean = [];
 function jsonArray(urlParam) {
     $.getJSON( urlParam, function( data ) {
-        var itemClean = []
+        
         counter = 0;
         $.each( data, function( key, val ) {
         itemClean.push([key, val]);
-        // fillSelect()
-        });
-        // console.log(itemClean);
         
-        return itemClean;
         });
+
+    console.log(itemClean);
+ 
+         });
+
 }
+
 
 function fillSelect(objId, listItens, defaultOption="", counter) 
     {

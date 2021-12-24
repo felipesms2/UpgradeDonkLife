@@ -35,5 +35,10 @@ class System
 
         return $this->addiTionalFooter;
     }
+
+    public function jsonDisplayDOM($urlFile)
+    {
+        return file_get_contents($urlFile);
+    }
     
 }
