@@ -59,7 +59,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="label" for="name">Como quer ser chamado?</label>
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+													<input type="text" class="form-control" name="name" id="name" placeholder="Nome">
 												</div>
 											</div>
 											<div class="col-md-6"> 
@@ -68,30 +68,32 @@
 													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
 												</div>
 											</div>
-											<div class="col-md-6">
+											<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="name">Onde mora?</label>
 													
 													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
 												</div>
 											</div>
-											<div class="col-md-6"> 
-												<div class="form-group">
-													<label class="label" for="email">Qual estado?</label>
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-												</div>
-											</div>
+
 											<div class="col-md-6">
 												<div class="form-group">
-													<label class="label" for="name">Qual seu principal nick no poker?</label>
+													<label class="label" for="name">DDD</label>
 													
 													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
 												</div>
 											</div>
 											<div class="col-md-6"> 
 												<div class="form-group">
-													<label class="label" for="email">Qual seu whatsapp? </label>
+													<label class="label" for="email">Número</label>
 													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="name">Qual seu principal nick no poker?</label>
+													
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
 												</div>
 											</div>
 								
