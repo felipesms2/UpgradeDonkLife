@@ -19,6 +19,8 @@
             $userName = $_POST['userName'];
             $password = $_POST['password'];
             $passwordConfirm = $_POST['passwordConfirm'];
+            $codeArea = $_POST['codeArea'];
+            
             
             $user = new User($pdo);
             $user->email = $email;
@@ -26,6 +28,15 @@
             $user->password = $password;
             $user->userLogin = $userName;
             $user->userAvailability();
+
+            if (empty($codeArea)) 
+            {
+                $error .="<li>DDD é obrigatório</li>";
+            }
+            if (empty($phoneNumber)) 
+            {
+                $error .="<li>Número de telefone é obrigatório</li>";
+            }
 
             if ($user->validateEmail($email)==false) 
                 {

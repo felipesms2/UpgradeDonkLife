@@ -14,10 +14,10 @@
             <label for="">Usuário</label>
             <input type="text" name="userName" class="form-control">
             <label for="">DDD</label>
-            <select class="form-control" id="codeArea" placeholder="Escolha DDD">
+            <select class="form-control" id="codeArea" name="codeArea" placeholder="Escolha DDD">
             </select>
             <label for="">Número do telefone</label>
-            <input type="text" class="form-control">
+            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control">
             <label for="">Senha</label>
             <input type="password" name="password" class="form-control">
             <label for="">Confirmar Senha</label>

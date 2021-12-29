@@ -1,5 +1,5 @@
 
-    telefone/whatsapp obrigatório
+    telefone/whatsapp obrigatório  ok
     validar whatsapp orçamento
     sites onde joga - opcional 
     data de nascimento opcional
