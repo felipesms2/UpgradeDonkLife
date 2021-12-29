@@ -304,8 +304,10 @@ class User
 
         public function passReset()
         {
-            $sqlCheckEmail = "SELECT 1 FROM phpbb_users WHERE user_email='". $this->email ."' ";
+            $sqlCheckEmail = "SELECT username_clean FROM phpbb_users WHERE user_email='". $this->email ."' ";
             $resultCheck = $this->pdoConn->query($sqlCheckEmail);
+            $resultFetch = $resultCheck->fetch(PDO::FETCH_ASSOC);
+            $this->userLogin = $resultFetch['username_clean'];
             $rowCountCheck = $resultCheck->rowCount();
             if ($rowCountCheck ==0) 
             {
@@ -330,18 +332,12 @@ class User
                  WHERE user_email ='". $this->email ."'";
                  $this->pdoConn->query($sqlToken);
                 $resetStatus = "Email enviado com sucesso para <strong>". $this->email ."</strong>. Lembrando que você tem 10 minutos para efetuar a troca, caso contrário sera necessário solicitar nova alteração";
+                include("./view-mailForgotPass.php");
                 $mailArray = array(
                     'subjectMSG' => "Donklife - Solicitação de nova senha",
                     'mailTo' => $this->email,
                     'personName' => $this->email,
-                    'bodyMSG' => "
-                        Olá, recebemos uma solicitação para resetar a senha do usuário ". $this->email ."
-                            <a href='". $this->siteBase ."'>clique aqui</a>
-                        <br>
-                        Caso não esteja visualizando a mensagem copie este link e cole 
-                        no seu navegador
-                         ". $this->siteBase ."
-                    ",
+                    'bodyMSG' => $bodyMSG
                 );
 
                 include "./email.php";

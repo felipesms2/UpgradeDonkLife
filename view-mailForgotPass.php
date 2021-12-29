@@ -19,7 +19,7 @@
             <div class='col-6 border text-center'>
                 <div>
                     <BR>
-                        <span style='font-weight: bold;'>". $this->userLogin ."</span>, bem vindo(a)
+                        <span style='font-weight: bold;'>". $this->userLogin ."</span>, bem vindo(a) de volta!
                 </div>
             </div>
         </div>
@@ -27,12 +27,13 @@
             <div class='col-2'></div>
             <div class='col text-center border mb-2'>
                 <p>
-                    Estamos felizes em ter você conosco!    
-    Confirme esse e-mail, para ativar sua conta na comunidade, clicando neste <a href='".$this->siteBase."'>link</a> (".$this->siteBase.") ou copiando e colando no seu navegador.    
-    Somos uma comunidade aberta, a jogadores de poker que estão iniciante, que jogam micro/low stakes, e quer compartilhar experiências e conhecimentos do poker com players de níveis similares.     
-    Aproveite o nosso fórum, para, discutir sobre mãos, tirar dúvidas sobre softwares relacionados a poker e os mais variados assuntos que envolvem esse esporte tão fantástico que é o poker.     
-    Em breve traremos mais novidades para  a comunidade, e iremos manter você informado! 
-    Um grande abraço, GLGL !!!
+                    Estamos felizes em atender você novamente!    
+                    Recebemos uma solicitação para resetar a senha do usuário ". $this->email ."
+                    <a href='". $this->siteBase ."'>clique aqui</a>
+                <br>
+                Caso não esteja visualizando a mensagem copie este link e cole 
+                no seu navegador
+                 ". $this->siteBase ."
                 </p>
             </div>
             <div class='col-2'></div>
