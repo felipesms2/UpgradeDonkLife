@@ -8,6 +8,8 @@ function modifyModalData(metaData)
         });
     }
 
+    
+
 
 function forgotPassView() 
     {
@@ -26,7 +28,7 @@ function spaDiv(module)
     var urlParams = new URLSearchParams(window.location.search);
     //console.log(urlParams);
     let mode = urlParams.get("mode");
-
+    
 
     function displayAdd(mode) 
     {
@@ -45,7 +47,7 @@ function spaDiv(module)
         //console.log(mode);     
     }
 
-
+    
 
 
     function callReset() 
@@ -88,6 +90,7 @@ function spaDiv(module)
             });
             
         }
+
 
         function resetAuth() 
         {
@@ -134,6 +137,7 @@ function spaDiv(module)
         }
     
 
+
         function registerSubmit() 
         {
             $('#btnSubmit').prop('disabled', true);
@@ -173,7 +177,7 @@ function spaDiv(module)
             });
             
         }
-
+        
  
 function avoidEnter() 
 {
@@ -198,6 +202,8 @@ function enteranother()
         }
     });
 }
+
+
 
 var itemClean = [];
 function jsonArray(urlParam) {
@@ -248,3 +254,4 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
 
     }
 
+    

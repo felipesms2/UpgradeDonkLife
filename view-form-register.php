@@ -1,4 +1,69 @@
 
+
+<form           
+    name="registrationForm"
+    id="registrationForm"
+    method="POST"
+    action="./control-form-actions.php" 
+    class="contactForm"
+>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="label" for="name">Como quer ser chamado?</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nome">
+            </div>
+        </div>
+        <div class="col-md-6"> 
+            <div class="form-group">
+                <label class="label" for="email">E-mail</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="name">Onde mora?</label>	
+                <input type="text" class="form-control" name="placeLive" id="placeLive" placeholder="Cidade - UF">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="label" for="name">DDD</label>
+                <select class="form-control" id="codeArea" name="codeArea" placeholder="Escolha DDD">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6"> 
+            <div class="form-group">
+                <label class="label" for="email">Número</label>
+                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="número">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="name">Qual seu principal nick no poker?</label>
+                
+                <input type="text" class="form-control" name="userName" id="userName" placeholder="">
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="ALL IN!!! (Cadastrar)" class="btn btn-primary">
+                <div class="submitting"></div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+<!-- old for code
             <form 
                 name="registrationForm"
                 id="registrationForm"
@@ -35,4 +100,4 @@
                 
             </div>
             </form>
-  
+   -->

@@ -4,6 +4,7 @@
   	<title>Contact Form 02</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 
 	</head>
 	<body>
@@ -14,13 +15,15 @@
         include "./model-config.php";
         include "./control-class-System.php";
 		include "./view-generic-modal.php";
-	
 
         if (isset($_GET['mode'])) 
             {
               $mode = $_GET['mode'];   
             }
         else $mode = null;
+
+		$system = new System();
+		$system->defaultStartForm = $mode;
 
         // echo "<pre>" ,  var_dump($_SERVER["HTTP_HOST"]) , "</pre>";
         // echo "<pre>" ,  var_dump($_SESSION) , "</pre>";
@@ -54,58 +57,8 @@
 				      		<div id="form-message-success" class="mb-4">
 				           Obrigado por se cadastrar!
 				      		</div>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-group">
-													<label class="label" for="name">Como quer ser chamado?</label>
-													<input type="text" class="form-control" name="name" id="name" placeholder="Nome">
-												</div>
-											</div>
-											<div class="col-md-6"> 
-												<div class="form-group">
-													<label class="label" for="email">E-mail</label>
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<label class="label" for="name">Onde mora?</label>
-													
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-												</div>
-											</div>
-
-											<div class="col-md-6">
-												<div class="form-group">
-													<label class="label" for="name">DDD</label>
-													
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-												</div>
-											</div>
-											<div class="col-md-6"> 
-												<div class="form-group">
-													<label class="label" for="email">Número</label>
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<label class="label" for="name">Qual seu principal nick no poker?</label>
-													
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-												</div>
-											</div>
-								
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="submit" value="ALL IN!!! (Cadastrar)" class="btn btn-primary">
-													<div class="submitting"></div>
-												</div>
-											</div>
-										</div>
-									</form>
-								</div>
+							  <?=$system->setForm();?>
+							</div>
 							</div>
 							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
 								<div class="info-wrap bg-primary w-100 p-md-5 p-4">
@@ -129,11 +82,17 @@
 		</div>
 	</section>
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
-  <script src="js/main.js"></script>
+	
+
+	<script>
+	    
+    var regionalCodeBR = <?=$system->jsonDisplayDOM("./ressources/ddd-list.json");?>;
+    console.log(regionalCodeBR);
+    //regionalCodeBR = Object.values(regionalCodeBR);  /*Converting object to array*/
+    let defaultOption = ["", "Selecione"];
+    fillSelect("codeArea", regionalCodeBR, defaultOption);
+    
+  	</script>
 
 	</body>
 </html>
