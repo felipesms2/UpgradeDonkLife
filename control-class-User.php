@@ -258,18 +258,12 @@ class User
                 }
             $this->siteBase = $_SERVER["REQUEST_SCHEME"] . '://' . ''. $_SERVER['SERVER_NAME'] . $scriptSubfolder . $this->fileValidation . ".php?action=checkNewUser&token=" . TOKEN_GENERATED ;
             /*Using this var on mail file*/
+            include"./view-mailNewUser.php";
             $mailArray = array(
                                 'subjectMSG' => $this->subjectMSG,
                                 'mailTo' => $this->email,
-                                'personName' => $this->name,
-                                'bodyMSG' => "
-                                    Bem vindo(a) ". $this->name ." para completar seu cadastro 
-                                        <a href='" . $this->siteBase . "'>clique aqui</a>
-                                    <br>
-                                    Caso não esteja visualizando a mensagem copie este link e cole 
-                                    no seu navegador
-                                     ". $this->siteBase ."
-                                ",
+                                'personName' => $this->userLogin,
+                                'bodyMSG' => $bodyMSG,
                             );
 
             include "./email.php";
