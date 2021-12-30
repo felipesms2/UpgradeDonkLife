@@ -58,6 +58,19 @@
 				           Obrigado por se cadastrar!
 				      		</div>
 							  <?=$system->setForm();?>
+							  <?php
+                    if ($mode !="resetAuth") 
+                    {
+                        include "./view-adittional-login-info.php";
+                    }  
+            
+        			?>
+        				<script>
+          			//alert("<?=$system->setAdditional()?>");
+          			displayAdd("<?=$system->setAdditional()?>");
+        			</script>
+            			<div id="responseContainer" class="text-center">
+            		</div>
 							</div>
 							</div>
 							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">

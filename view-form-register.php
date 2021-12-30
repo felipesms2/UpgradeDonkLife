@@ -7,6 +7,7 @@
     action="./control-form-actions.php" 
     class="contactForm"
 >
+<input type="hidden" name="action" value="registration"/>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
@@ -20,13 +21,24 @@
                 <input type="email" class="form-control" name="email" id="email" placeholder="Email">
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="label" for="name">Senha</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Nome">
+            </div>
+        </div>
+        <div class="col-md-6"> 
+            <div class="form-group">
+                <label class="label" for="email">Confirmação de Senha</label>
+                <input type="password" class="form-control" name="passwordConfirm" id="passwordConfirm" placeholder="Email">
+            </div>
+        </div>
         <div class="col-md-12">
             <div class="form-group">
                 <label class="label" for="name">Onde mora?</label>	
                 <input type="text" class="form-control" name="placeLive" id="placeLive" placeholder="Cidade - UF">
             </div>
         </div>
-
         <div class="col-md-6">
             <div class="form-group">
                 <label class="label" for="name">DDD</label>
@@ -50,7 +62,13 @@
 
         <div class="col-md-12">
             <div class="form-group">
-                <input type="submit" value="ALL IN!!! (Cadastrar)" class="btn btn-primary">
+                <button 
+                    type="button"  
+                    class="btn btn-primary"
+                    id="btnSubmit"
+                    onclick="registerSubmit()"
+                >ALL IN!!! (Cadastrar)</button>
+                <input type="submit">
                 <div class="submitting"></div>
             </div>
         </div>
@@ -92,8 +110,8 @@
                 <button 
                     type="button"
                     class="btn btn-block btn-info"
-                    id="btnSubmit"
                     style="background-color: #578733; border-color: #578733; color:white"
+                    id="btnSubmit"
                     onclick="registerSubmit()"
                     >Registrar
                 </button>

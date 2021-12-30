@@ -172,7 +172,8 @@ function spaDiv(module)
                     $('#responseContainer').html(res.msg);
                     $('#responseContainer').show();
                     $('#btnSubmit').prop('disabled', false);
-                    console.log(res);
+                    console.log(responseError);
+                    
                 },
             });
             

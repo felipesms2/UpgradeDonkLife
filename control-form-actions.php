@@ -5,6 +5,8 @@
     include "./model-config.php";
     
     $error ="";
+    $idFieldError = [];
+    $errorMsg = [];
 
     $postString = implode(",", $_POST);
     $action = $_POST['action'];    
@@ -31,51 +33,71 @@
 
             if (empty($codeArea)) 
             {
+                $idFieldError[] = "codeArea";
+                $errorMsg["codeArea"] = "DDD é obrigatório";
                 $error .="<li>DDD é obrigatório</li>";
             }
             if (empty($phoneNumber)) 
             {
+                $idFieldError[] = "phoneNumber";
+                $errorMsg["phoneNumber"] = "Número de telefone é obrigatório";
                 $error .="<li>Número de telefone é obrigatório</li>";
             }
 
             if ($user->validateEmail($email)==false) 
                 {
+                    $idFieldError[] = "email";
+                    $errorMsg["email"] = "Formato de email incorreto";
                     $error .="<li>Formato de email incorreto</li>";
                 }
 
             if ($user->userFound['userLogin']==true) 
                 {
+                    $idFieldError[] = "userLogin";
+                    $errorMsg["userLogin"] = "Já está registrado";
                     $error .="<li>Usuário ". $user->userLogin ." Já está registrado</li>" ;
                 }
             
             if ($user->userFound['email']==true) 
                 {
+                    $idFieldError[] = "email";
+                    $errorMsg["email"] = "Email ". $user->email ." Já está registrado";
                     $error .="<li>Email ". $user->email ." Já está registrado</li>" ;
                 }
             
 
             if (empty($name)) 
                 {
+                    $idFieldError[] = "name";
+                    $errorMsg["name"] = "Nome é obrigatório";
                     $error .= "<li>Nome é obrigatório</li>";
                 }
 
             if (empty($email)) 
                 {
+                    $idFieldError[] = "email";
+                    $errorMsg["email"] = "Email não foi informado";
                     $error .= "<li>Email não foi informado</li>";
                 }
 
             if (empty($userName)) 
                 {
+                    $idFieldError[] = "userName";
+                    $errorMsg['userName'] = "Nome de usuário";
                     $error .= "<li>Nome de usuário</li>";
                 }
 
             if (empty($password)) 
                 {
+                    $idFieldError[] = "password";
+                    $errorMsg["password"] = "Senha não pode ficar vazia";
                     $error .= "<li>Senha não pode ficar vazia</li>";
                 }
 
             if (empty($passwordConfirm)) 
                 {
+                    $idFieldError[] = "passwordConfirm";
+                    $errorMsg["passwordConfirm"] = "";
                     $error .= "<li>Confirmação de senha ausente</li>";
                 }
             if ($password !== $passwordConfirm) 
@@ -93,8 +115,9 @@
                 
             else
             {
+                $error .= "<script> responseError = ['Ford', 'BMW', 'Fiat'] </script>";
                 http_response_code( 406 );
-                echo json_encode( [ 'msg' => $error ] );
+                echo json_encode( [ 'msg' => $error] );
             }
             
         break;
@@ -125,8 +148,10 @@
                     
                 else
                 {
+                    
                     http_response_code( 406 );
                     echo json_encode( [ 'msg' => $error ] );
+                
                 }
         break;
 
