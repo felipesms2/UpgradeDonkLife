@@ -140,6 +140,7 @@ function spaDiv(module)
 
         function registerSubmit() 
         {
+            $(".error-validation").hide();
             $('#btnSubmit').prop('disabled', true);
             let formData = $('#registrationForm').serialize();
             //console.log(formData);
@@ -152,13 +153,11 @@ function spaDiv(module)
 
                     let res = JSON.parse(response);
 
-                    $('#responseContainer').removeClass('alert-danger');
-                    $('#responseContainer').addClass('alert-success');
-                    $('#responseContainer').html(res.msg);
-                    $('#responseContainer').show();
+                    //$('#responseContainer').removeClass('alert-danger');
+                    //$('#responseContainer').html(res.msg);
+                    //$('#responseContainer').show();
                     //console.log(formData);
                     $('#btnSubmit').prop('disabled', false);
-
                     //document.getElementById("registrationForm").reset();
                     //$('#form-content').html("aaa");
 
@@ -167,12 +166,14 @@ function spaDiv(module)
 
                     let res = JSON.parse(response.responseText);
 
-                    $('#responseContainer').addClass('alert-danger');
-                    $('#responseContainer').removeClass('alert-success');
+                    //$('#responseContainer').addClass('alert-danger');
+                    //$('#responseContainer').removeClass('alert-success');
                     $('#responseContainer').html(res.msg);
-                    $('#responseContainer').show();
+                    //$('#responseContainer').show();
                     $('#btnSubmit').prop('disabled', false);
-                    console.log(responseError);
+                    console.log(errorField);
+                    console.log(errorMsg);
+                    displayErrorValidation(errorField, errorMsg);
                     
                 },
             });
@@ -256,3 +257,13 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
     }
 
     
+
+    function displayErrorValidation(errorField, errorMsg) 
+        {
+            counter = 0;
+            errorField.forEach(element => 
+                {
+                    $("#" + "error-" + element).show();
+                    $("#" + "error-" + element).html(errorMsg[element]);
+                });
+        }

@@ -66,11 +66,13 @@
             
         			?>
         				<script>
+					
           			//alert("<?=$system->setAdditional()?>");
           			displayAdd("<?=$system->setAdditional()?>");
         			</script>
-            			<div id="responseContainer" class="text-center">
-            		</div>
+            			<div id="responseContainer" class="text-center error-validation">
+            			</div>
+						<div id="error-allMessage" class="alert alert-danger text-center font-weight-bold error-validation" style="display: none"></div>
 							</div>
 							</div>
 							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">

@@ -13,30 +13,65 @@
             <div class="form-group">
                 <label class="label" for="name">Como quer ser chamado?</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Nome">
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-name"
+                >
+                Mensagem
+            </div>
             </div>
         </div>
         <div class="col-md-6"> 
             <div class="form-group">
                 <label class="label" for="email">E-mail</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-email"
+                >
+                Mensagem
+            </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="label" for="name">Senha</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Nome">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Senha">
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-password"
+                >
+                Mensagem
+            </div>
             </div>
         </div>
         <div class="col-md-6"> 
             <div class="form-group">
                 <label class="label" for="email">Confirmação de Senha</label>
-                <input type="password" class="form-control" name="passwordConfirm" id="passwordConfirm" placeholder="Email">
+                <input type="password" class="form-control" name="passwordConfirm" id="passwordConfirm" placeholder="Senha novamente">
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-passwordConfirm"
+                >
+                Mensagem
+            </div>
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
                 <label class="label" for="name">Onde mora?</label>	
                 <input type="text" class="form-control" name="placeLive" id="placeLive" placeholder="Cidade - UF">
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-placeLive"
+                >
+                Mensagem
+            </div>
             </div>
         </div>
         <div class="col-md-6">
@@ -44,19 +79,39 @@
                 <label class="label" for="name">DDD</label>
                 <select class="form-control" id="codeArea" name="codeArea" placeholder="Escolha DDD">
                 </select>
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-codeArea"
+                >
+                Mensagem
+            </div>
             </div>
         </div>
         <div class="col-md-6"> 
             <div class="form-group">
                 <label class="label" for="email">Número</label>
                 <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="número">
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-phoneNumber"
+                >
+                Mensagem
+            </div>
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
                 <label class="label" for="name">Qual seu principal nick no poker?</label>
-                
                 <input type="text" class="form-control" name="userName" id="userName" placeholder="">
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-userName"
+                >
+                Mensagem
+            </div>
             </div>
         </div>
 
@@ -74,9 +129,6 @@
         </div>
     </div>
 </form>
-
-
-
 
 
 

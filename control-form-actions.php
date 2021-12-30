@@ -22,6 +22,7 @@
             $password = $_POST['password'];
             $passwordConfirm = $_POST['passwordConfirm'];
             $codeArea = $_POST['codeArea'];
+            $phoneNumber = $_POST['phoneNumber'];
             
             
             $user = new User($pdo);
@@ -53,8 +54,8 @@
 
             if ($user->userFound['userLogin']==true) 
                 {
-                    $idFieldError[] = "userLogin";
-                    $errorMsg["userLogin"] = "Já está registrado";
+                    $idFieldError[] = "userName";
+                    $errorMsg["userName"] = "Já está registrado";
                     $error .="<li>Usuário ". $user->userLogin ." Já está registrado</li>" ;
                 }
             
@@ -97,11 +98,13 @@
             if (empty($passwordConfirm)) 
                 {
                     $idFieldError[] = "passwordConfirm";
-                    $errorMsg["passwordConfirm"] = "";
+                    $errorMsg["passwordConfirm"] = "Confirmação de senha ausente";
                     $error .= "<li>Confirmação de senha ausente</li>";
                 }
             if ($password !== $passwordConfirm) 
                 {
+                    $idFieldError[] = "passwordConfirm";
+                    $errorMsg['passwordConfirm'] = "Senha e confirmação de senha devem ser iguais";
                     $error .= "<li>Senha e confirmação de senha devem ser iguais</li>";
                 }
             if (empty($error)) 
@@ -115,7 +118,12 @@
                 
             else
             {
-                $error .= "<script> responseError = ['Ford', 'BMW', 'Fiat'] </script>";
+                $idFieldError[] = "allMessage";
+                $errorMsg["allMessage"] = "Há um problema com os dados preenchidos, por favor verifique detalhes acima";
+                $error .= "<script> 
+                                errorField = " . json_encode($idFieldError) . ";
+                                errorMsg = ". json_encode($errorMsg) ."; 
+                            </script>";
                 http_response_code( 406 );
                 echo json_encode( [ 'msg' => $error] );
             }
@@ -148,7 +156,6 @@
                     
                 else
                 {
-                    
                     http_response_code( 406 );
                     echo json_encode( [ 'msg' => $error ] );
                 
