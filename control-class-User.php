@@ -5,6 +5,7 @@ class User
     
     {
         public $pdoConn;
+        public $lastInsertID;
         public $name;
         public $email;
         public $userLogin;
@@ -251,6 +252,7 @@ class User
            // var_dump("<pre>" , $sqlRegisterUser , "</pre>");
            // die;
             $this->pdoConn->exec($sqlRegisterUser);
+            $this->lastInsertID = $this->pdoConn->lastInsertId();
             $scriptSubfolder = "/drafts/UpgradeDonkLife/";
             if ($_SERVER["SERVER_NAME"] !="localhost") 
                 {
