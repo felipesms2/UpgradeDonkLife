@@ -64,7 +64,8 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label class="label" for="name">Onde mora?</label>	
-                <input type="text" class="form-control" name="placeLive" id="placeLive" placeholder="Cidade - UF">
+                <input type="text" onkeyup="AutoComplete()" class="form-control" name="placeLive" id="placeLive" placeholder="Cidade - UF">
+                <ul class="list-gpfrm" id="searchPlaceResult"></ul>
                 <div 
                     class="alert alert-danger text-center  error-validation"
                     style="display: none;"

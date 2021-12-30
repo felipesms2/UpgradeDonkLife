@@ -2,19 +2,20 @@
 
 include "./model-db-control.php";
 
-//$_POST['querystr'] = "s";
-	if(isset($_POST['querystr'])){
+	//$_POST['placeLive'] = "s";
+	//$conn = new mysqli('localhost', 'felipe', 'W3.org@//', 'u369732545_forum');
+	if(isset($_POST['placeLive'])){
 
-		$conn = new mysqli('localhost', 'felipe', 'W3.org@//', 'u369732545_forum');
+		
 		$results = array('error' => false, 'data' => '');
-		$querystr = $_POST['querystr'];
-		if(empty($querystr))
+		$placeLive = $_POST['placeLive'];
+		if(empty($placeLive))
 		{
 			$results['error'] = true;
 		}
 		else
 		{
-			$sqlGetType = "SELECT * FROM users WHERE `name` LIKE '%$querystr%'";
+			$sqlGetType = "SELECT * FROM users WHERE `name` LIKE '%$placeLive%'";
 			$resultType = $pdo->query($sqlGetType);
 			$rowCount = $resultType->rowCount();
 			if($rowCount > 0)

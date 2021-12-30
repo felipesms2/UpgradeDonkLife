@@ -267,3 +267,69 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
                     $("#" + "error-" + element).html(errorMsg[element]);
                 });
         }
+
+        
+        function AutoComplete() 
+            {
+
+                var form = $('#registrationForm').serialize();
+                $.ajax(
+                {
+                    type: 'POST',
+                    url: 'do_search.php',
+                    data: form,
+                    dataType: 'json',
+                    success: function(response)
+                        {
+                        if(response.error)
+                            {
+                            $('#searchPlaceResult').hide();
+                            }
+                        else
+                            {
+                            $('#searchPlaceResult').show().html(response.data);
+                            }
+                        }   
+                });
+                
+            }
+        
+        $('#placeLive').keyup(function(e)
+        {
+			e.preventDefault();
+			var form = $('#registrationForm').serialize();
+			$.ajax(
+            {
+				type: 'POST',
+				url: 'do_search.php',
+				data: form,
+				dataType: 'json',
+				success: function(response)
+                    {
+					if(response.error)
+                        {
+						$('#searchPlaceResult').hide();
+					    }
+					else
+                        {
+						$('#searchPlaceResult').show().html(response.data);
+					    }
+				    }   
+            });
+		});
+
+
+		//fill the input
+
+		$(document).on('click', '.list-gpfrm-list', function(e){
+
+			e.preventDefault();
+
+			$('#searchPlaceResult').hide();
+
+			var fullname = $(this).data('fullname');
+
+			$('#placeLive').val(fullname);
+
+		});
+    
