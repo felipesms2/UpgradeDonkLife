@@ -1,0 +1,42 @@
+
+		.gst20{
+
+			margin-top:20px;
+
+		}
+
+		#hdTuto_search{
+
+			display: none;
+
+		}
+
+		.list-gpfrm-list a{
+
+			text-decoration: none !important;
+
+		}
+
+		.list-gpfrm li{
+
+			cursor: pointer;
+
+			padding: 4px 0px;
+
+		}
+
+		.list-gpfrm{
+
+			list-style-type: none;
+
+    		background: #d4e8d7;
+
+		}
+
+		.list-gpfrm li:hover{
+
+			color: white;
+
+			background-color: #3d3d3d;
+
+		}
