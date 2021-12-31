@@ -25,11 +25,14 @@
             $placeLive = $_POST['passwordConfirm'];
             $codeArea = $_POST['codeArea'];
             $phoneNumber = $_POST['phoneNumber'];
-            $urlArray = $_POST['websites'];
-
-            echo "Quantiddade " . count($urlArray);
-            
-            
+            if (isset($_POST['websites'])) 
+                {
+                    $websites = $_POST['websites'];
+                }
+            else
+                {
+                    $websites = array("none");
+                }
             
             $user = new User($pdo);
             $user->email = $email;
@@ -134,7 +137,6 @@
             else
             {
                 $idFieldError[] = "allMessage";
-                $error .= $_POST['websites'][0];
                 $errorMsg["allMessage"] = "Há um problema com os dados preenchidos, por favor verifique detalhes acima";
                 $error .= "<script> 
                                 errorField = " . json_encode($idFieldError) . ";
