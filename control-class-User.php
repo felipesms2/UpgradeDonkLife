@@ -78,6 +78,11 @@ class User
             return filter_var($email, FILTER_VALIDATE_EMAIL);
         }
 
+        public function validateUrl($url)
+        {
+            return filter_var($url, FILTER_VALIDATE_URL);
+        }
+
         public function __construct($dbObj)
         {
             $this->pdoConn = $dbObj;

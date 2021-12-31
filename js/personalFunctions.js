@@ -334,4 +334,11 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
 			$('#placeLive').val(fullname);
 
 		});
+
+
+        function drawInputText(divId, dynamicName, idCounter) 
+            {
+                inputObj = "<input type='text' name='" + dynamicName +  "[]' id='dynamicName-"+ idCounter +"'> </input>";
+                $("#" + divId).html(inputObj);
+            }
     

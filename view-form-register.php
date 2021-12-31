@@ -118,6 +118,24 @@
 
         <div class="col-md-12">
             <div class="form-group">
+                <label class="label" for="name">Joga em algum site?</label>
+                <ul>
+                    <li>
+                        <input type="checkbox" class="" name="websites[]" id="website-0" placeholder="">
+                    </li>
+                </ul>
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-userName"
+                >
+                Mensagem
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
                 <button 
                     type="button"  
                     class="btn btn-primary"

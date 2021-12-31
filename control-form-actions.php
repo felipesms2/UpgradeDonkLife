@@ -8,7 +8,8 @@
     $idFieldError = [];
     $errorMsg = [];
 
-    $postString = implode(",", $_POST);
+    //$postString = implode(",", $_POST);
+    var_dump($_POST);
     $action = $_POST['action'];    
 
     switch ($action) 
@@ -24,6 +25,9 @@
             $placeLive = $_POST['passwordConfirm'];
             $codeArea = $_POST['codeArea'];
             $phoneNumber = $_POST['phoneNumber'];
+            $urlArray = $_POST['websites'];
+
+            echo "Quantiddade " . count($urlArray);
             
             
             
@@ -130,6 +134,7 @@
             else
             {
                 $idFieldError[] = "allMessage";
+                $error .= $_POST['websites'][0];
                 $errorMsg["allMessage"] = "Há um problema com os dados preenchidos, por favor verifique detalhes acima";
                 $error .= "<script> 
                                 errorField = " . json_encode($idFieldError) . ";
