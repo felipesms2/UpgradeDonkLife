@@ -247,7 +247,7 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
                 console.log(labelOption);
                 if (idInsert!=defaultOption[counter]) 
                 {
-                    $("#" + objId).append(new Option(idInsert + " - " + labelOption, labelOption));            
+                    $("#" + objId).append(new Option(labelOption + " - " + idInsert, idInsert));            
                 }  
                 counter++;
             }

@@ -27,6 +27,7 @@ class User
         public $codeArea;
         public $phoneNumber;
         public $webSites = [];
+        public $extraData = [];
 
         public function randonToken()
         {
@@ -258,12 +259,20 @@ class User
             WHERE
                 user_id = '". $this->userIdModel ."'                 
             ";
-           // var_dump("<pre>" , $sqlRegisterUser , "</pre>");
-           // die;
+
             $this->pdoConn->exec($sqlRegisterUser);
             $this->lastInsertID = $this->pdoConn->lastInsertId();
-            
 
+            $sqlInsertExtra = "
+                    INSERT INTO
+                        user_extras
+                    SET
+                        userId ='". $this->lastInsertID ."' ,
+                        detailsJson = '". json_encode($this->extraData) ."'
+
+            ";
+            $this->pdoConn->exec($sqlInsertExtra);
+             $this->pdoConn->exec($sqlRegisterUser);
             $scriptSubfolder = "/drafts/UpgradeDonkLife/";
             if ($_SERVER["SERVER_NAME"] !="localhost") 
                 {

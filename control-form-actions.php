@@ -9,7 +9,7 @@
     $errorMsg = [];
 
     //$postString = implode(",", $_POST);
-    var_dump($_POST);
+    //var_dump($_POST);
     $action = $_POST['action'];    
 
     switch ($action) 
@@ -22,7 +22,7 @@
             $userName = $_POST['userName'];
             $password = $_POST['password'];
             $passwordConfirm = $_POST['passwordConfirm'];
-            $placeLive = $_POST['passwordConfirm'];
+            $placeLive = $_POST['placeLive'];
             $codeArea = $_POST['codeArea'];
             $phoneNumber = $_POST['phoneNumber'];
             if (isset($_POST['websites'])) 
@@ -39,6 +39,13 @@
             $user->name = $name;
             $user->password = $password;
             $user->userLogin = $userName;
+            $user->extraData = array(
+                    "codeArea" => $codeArea, 
+                    "phonenNumber" => $phoneNumber, 
+                    "placeLive" => $placeLive,
+                    "websites" => $websites
+                );
+             //var_dump("<pre>" , json_encode($user->extraData) , "</pre>");
             $user->userAvailability();
 
             if (empty($codeArea)) 
