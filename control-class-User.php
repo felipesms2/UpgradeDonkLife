@@ -23,6 +23,10 @@ class User
         public $fileValidation = "UserValidate";
         public $user_actkey;
         public $validToken;
+        public $placeLive;
+        public $codeArea;
+        public $phoneNumber;
+        public $webSites = [];
 
         public function randonToken()
         {
@@ -253,6 +257,8 @@ class User
            // die;
             $this->pdoConn->exec($sqlRegisterUser);
             $this->lastInsertID = $this->pdoConn->lastInsertId();
+            
+
             $scriptSubfolder = "/drafts/UpgradeDonkLife/";
             if ($_SERVER["SERVER_NAME"] !="localhost") 
                 {

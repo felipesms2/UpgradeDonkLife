@@ -21,8 +21,10 @@
             $userName = $_POST['userName'];
             $password = $_POST['password'];
             $passwordConfirm = $_POST['passwordConfirm'];
+            $placeLive = $_POST['passwordConfirm'];
             $codeArea = $_POST['codeArea'];
             $phoneNumber = $_POST['phoneNumber'];
+            
             
             
             $user = new User($pdo);
