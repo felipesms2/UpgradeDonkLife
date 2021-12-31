@@ -192,18 +192,20 @@ function avoidEnter()
         
 }
 
-function enteranother() 
+function enteranother(formId) 
 {
 
-    $('#formForgot').keypress(function(event){
+    $('#' + formId).keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
-            $('#modalBtnSave').click();
+            $('#btnSubmit').click();
             return false;
             alert('You pressed a "enter" key in textbox');  
         }
     });
 }
+
+
 
 
 

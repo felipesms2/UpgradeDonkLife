@@ -38,6 +38,11 @@
                 $errorMsg["codeArea"] = "DDD é obrigatório";
                 $error .="<li>DDD é obrigatório</li>";
             }
+            if (strlen($phoneNumber)<8) 
+            {
+                $idFieldError[] = "phoneNumber";
+                $errorMsg["phoneNumber"] = "Número de telefone precisa ter ao menos 8 dígitos";            
+            }            
             if (empty($phoneNumber)) 
             {
                 $idFieldError[] = "phoneNumber";
@@ -55,7 +60,7 @@
             if ($user->userFound['userLogin']==true) 
                 {
                     $idFieldError[] = "userName";
-                    $errorMsg["userName"] = "Já está registrado";
+                    $errorMsg["userName"] = "Este usuário (<strong>$userName</strong>) Já está registrado";
                     $error .="<li>Usuário ". $user->userLogin ." Já está registrado</li>" ;
                 }
             
@@ -87,7 +92,11 @@
                     $errorMsg['userName'] = "Nome de usuário";
                     $error .= "<li>Nome de usuário</li>";
                 }
-
+            if (strlen($password<6)) 
+            {
+                $idFieldError[] = "password";
+                $errorMsg["password"] = "Senha deve ter ao menos 6 caracteres";
+            }
             if (empty($password)) 
                 {
                     $idFieldError[] = "password";

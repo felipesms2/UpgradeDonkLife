@@ -132,6 +132,11 @@
 </form>
 
 
+<script>
+    enteranother("registrationForm");
+</script>
+
+
 
 
 <!-- old for code

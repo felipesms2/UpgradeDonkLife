@@ -12,7 +12,7 @@
     </form>
 
     <script>
-        enteranother();
+        enteranother("formForgot");
         //avoidEnter();
     </script>
 
