@@ -121,7 +121,24 @@
                 <label class="label" for="name">Joga em algum site?</label>
                 <ul>
                     <li>
-                        <input type="checkbox" class="" name="websites[]" id="website-0" placeholder="">
+                        <input type="checkbox" class="form-check-label" name="websites[]" id="website-1" value="bovada"  placeholder="">
+                            <img src="./img/bovada-logo-small.jpg" alt="">
+                    </li>
+                    <li>
+                        <input type="checkbox" class="form-check-label" name="websites[]" id="website-2" value="partyPoker"  placeholder="">
+                            <img src="./img/party-poker-logo-small.jpg" alt="">
+                    </li>
+                    <li>
+                        <input type="checkbox" class="form-check-label" name="websites[]" id="website-3" value="betOnline"  placeholder="">
+                            <img src="./img/betonline-logo-small.jpg" alt="">
+                    </li>
+                    <li>
+                        <input type="checkbox" class="form-check-label" name="websites[]" id="website-4" value="888"  placeholder="">
+                            <img src="./img/888-logo-small.jpg" alt="">
+                    </li>
+                    <li>
+                        <input type="checkbox" class="form-check-label" name="websites[]" id="website-5" value="pokerStars"  placeholder="">
+                            <img src="./img/pokerstars-logo-small.jpg" alt="">
                     </li>
                 </ul>
                 <div 
