@@ -75,6 +75,20 @@
             </div>
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="name">Data de Nascimento?</label>	
+                <input type="date"  class="form-control" name="birthDay" id="birthDay">
+                <ul class="list-gpfrm" id="searchPlaceResult"></ul>
+                <div 
+                    class="alert alert-danger text-center  error-validation"
+                    style="display: none;"
+                    id="error-placeLive"
+                >
+                Mensagem
+            </div>
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="label" for="name">DDD</label>
@@ -92,7 +106,7 @@
         <div class="col-md-6"> 
             <div class="form-group">
                 <label class="label" for="email">Número</label>
-                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="número">
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="número" maxlength="9">
                 <div 
                     class="alert alert-danger text-center  error-validation"
                     style="display: none;"

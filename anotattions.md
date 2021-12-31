@@ -1,12 +1,13 @@
 
-    telefone/whatsapp obrigatório  ok
-    validar whatsapp orçamento
-    sites onde joga - opcional 
-    data de nascimento opcional
-    ajustar as cores do css do forum e logotipo
-    cidade e estado como opcional ajax auto complete
-    trocar a mensagem de sucesso após registrar
+    telefone/whatsapp obrigatório - OK
+    sites onde joga - opcional - OK 
+    data de nascimento opcional - OK
+    cidade e estado como opcional ajax auto complete - 0K
     botao interno de registrar colocar evento pra carregar no formulario novo
-    landing page com apresentação como no facebook
-    trocar a cor do botão pra verde da logo
-    botão enter pra disparar o event
+    landing page com apresentação como no facebook - OK
+    trocar a cor do botão pra verde da logo - OK
+    botão enter pra disparar o event - OK
+
+    validar whatsapp orçamento
+    trocar a mensagem de sucesso após registrar 
+    ajustar as cores do css do forum e logotipo

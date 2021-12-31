@@ -25,6 +25,7 @@
             $placeLive = $_POST['placeLive'];
             $codeArea = $_POST['codeArea'];
             $phoneNumber = $_POST['phoneNumber'];
+            $birthDay = $_POST['birthDay'];
             if (isset($_POST['websites'])) 
                 {
                     $websites = $_POST['websites'];
@@ -43,7 +44,8 @@
                     "codeArea" => $codeArea, 
                     "phonenNumber" => $phoneNumber, 
                     "placeLive" => $placeLive,
-                    "websites" => $websites
+                    "websites" => $websites,
+                    "birthDay" => $birthDay
                 );
              //var_dump("<pre>" , json_encode($user->extraData) , "</pre>");
             $user->userAvailability();
