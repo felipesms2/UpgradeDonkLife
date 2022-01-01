@@ -145,8 +145,7 @@
                 
             else
             {
-                $idFieldError[] = "allMessage";
-                $errorMsg["allMessage"] = "Há um problema com os dados preenchidos, por favor verifique detalhes acima";
+                
                 $error .= "<script> 
                                 errorField = " . json_encode($idFieldError) . ";
                                 errorMsg = ". json_encode($errorMsg) ."; 

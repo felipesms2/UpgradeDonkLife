@@ -8,8 +8,10 @@
       </div>
       <div class="modal-body" id="modal-body">
         <div id="form-modal-body">
-          
         </div>
+        <div class="alert text-center" id="additionalContent" style="display: none;">
+            ,,,,
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

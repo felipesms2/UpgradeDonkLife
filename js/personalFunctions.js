@@ -8,7 +8,6 @@ function modifyModalData(metaData)
         });
     }
 
-    
 
 
 function forgotPassView() 
@@ -158,6 +157,12 @@ function spaDiv(module)
                     //$('#responseContainer').show();
                     //console.log(formData);
                     $('#btnSubmit').prop('disabled', false);
+                    modalMetaData = [];
+                    emailSent = $("#email").val();
+                    modalMetaData["msg"] = "Cadastro efetuado com sucesso, confira sua caixa de entrada ou spam no email  "+ emailSent +" ";
+                    modalMetaData["title"] = "Seu cadastro foi realizado com sucesso, ";
+                    modalMetaData["newClass"] = "alert-success";
+                    modalChangeRegister(modalMetaData);
                     //document.getElementById("registrationForm").reset();
                     //$('#form-content').html("aaa");
 
@@ -171,6 +176,11 @@ function spaDiv(module)
                     $('#responseContainer').html(res.msg);
                     //$('#responseContainer').show();
                     $('#btnSubmit').prop('disabled', false);
+                    modalMetaData = []
+                    modalMetaData["title"] = "Ops!!";
+                    modalMetaData["newClass"] = "alert-danger";
+                    modalMetaData["msg"] = "Uma ou mais informação foi fornecida incorretamente, por favor verifique as instruções";
+                    modalChangeRegister(modalMetaData);
                     console.log(errorField);
                     console.log(errorMsg);
                     displayErrorValidation(errorField, errorMsg);
@@ -178,6 +188,21 @@ function spaDiv(module)
                 },
             });
             
+            
+            
+            
+        }
+
+    function modalChangeRegister(modalMetaData)
+        {
+            $('#modalTitle').html(modalMetaData.title);
+            $('#modalTitle').html(modalMetaData.title);
+            $('#genericModal').modal('toggle');
+            $('#additionalContent').removeClass('alert-success');
+            $('#additionalContent').removeClass('alert-danger');
+            $('#additionalContent').addClass(modalMetaData.newClass);
+            $('#additionalContent').html(modalMetaData.msg);
+            $('#additionalContent').show();
         }
         
  
