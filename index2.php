@@ -52,11 +52,6 @@
 						<div class="row no-gutters">
 							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3 class="mb-4">Bora dar call??</h3>
-									<div id="form-message-warning" class="mb-4"></div> 
-				      		<div id="form-message-success" class="mb-4">
-				           Obrigado por se cadastrar!
-				      		</div>
 							  <?=$system->setForm();?>
 							  <?php
                     if ($mode !="resetAuth") 
