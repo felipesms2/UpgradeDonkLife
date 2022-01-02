@@ -52,7 +52,9 @@
 						<div class="row no-gutters">
 							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
-							  <?=$system->setForm();?>
+								<div id="form-content">		
+							  		<?=$system->setForm();?>
+								</div>
 							  <?php
                     if ($mode !="resetAuth") 
                     {
@@ -62,7 +64,7 @@
         			?>
         				<script>
 					
-          			//alert("<?=$system->setAdditional()?>");
+    
           			displayAdd("<?=$system->setAdditional()?>");
         			</script>
             			<div id="responseContainer" class="text-center error-validation">
@@ -97,13 +99,12 @@
 	<script>
 	    
     var regionalCodeBR = <?=$system->jsonDisplayDOM("./ressources/ddd-list.json");?>;
-    console.log(regionalCodeBR);
     //regionalCodeBR = Object.values(regionalCodeBR);  /*Converting object to array*/
     let defaultOption = ["", "Selecione"];
     fillSelect("codeArea", regionalCodeBR, defaultOption);
     
   	</script>
-
+	<input type="hidden" id='diVForDisplay' name='divForDisplay' value="">
 	</body>
 </html>
 

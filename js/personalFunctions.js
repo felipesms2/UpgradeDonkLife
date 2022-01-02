@@ -104,7 +104,7 @@ function spaDiv(module)
                 url: 'control-form-actions.php',
                 data: formData,
                 success: function (response) {
-
+                    console.log(response);
                     let res = JSON.parse(response);
 
                     //$('#responseContainer').removeClass('alert-danger');
