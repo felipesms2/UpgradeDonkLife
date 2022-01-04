@@ -1,4 +1,4 @@
-
+<div id="formLogin">
     <label for="">Usuário</label>
     <input type="text" class="form-control" id="username">
     <label for="">Senha</label>
@@ -8,3 +8,5 @@
             Esqueci minha senha
         </small>
     </button>
+
+</div>
