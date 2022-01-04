@@ -1,5 +1,3 @@
-<h3 class="mb-4">Bora dar call??</h3>
-
 <form           
     name="registrationForm"
     id="registrationForm"
@@ -8,6 +6,7 @@
     class="contactForm"
     style="display: <?=$this->setDisplayForm("registrationForm")?>;"
 >
+<h3 class="mb-4">Bora dar call??</h3>
 <input type="hidden" name="action" value="registration"/>
     <div class="row">
         <div class="col-md-6">
@@ -170,7 +169,7 @@
             <div class="form-group">
                 <button 
                     type="button"  
-                    class="btn btn-primary"
+                    class="btn btn-primary btn-block"
                     id="btnSubmit"
                     onclick="registerSubmit()"
                 >ALL IN!!! (Cadastrar)</button>
