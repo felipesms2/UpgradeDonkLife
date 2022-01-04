@@ -2,7 +2,7 @@ function modifyModalData(metaData)
     {
         $("#modalTitle").html(metaData['title']);
         $("#additionalContent").html(metaData['fileBodyLoad']);
-        $("#additionalContent").removeClass();
+        $("#additionalContent").hide();
         //console.clear();
         previousUsername =  document.getElementById("username").value;
         $("#form-modal-body").load("view-form-forgot.php", function () {      
@@ -225,13 +225,13 @@ function avoidEnter()
         
 }
 
-function enteranother(formId) 
+function enteranother(formId, buttonTrigger) 
 {
 
     $('#' + formId).keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
-            $('#btnSubmit').click();
+            $('#' + buttonTrigger).click();
             return false;
             alert('You pressed a "enter" key in textbox');  
         }

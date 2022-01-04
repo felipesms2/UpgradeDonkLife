@@ -184,7 +184,7 @@
 
 
 <script>
-    enteranother("registrationForm");
+    enteranother("registrationForm", "btnSubmit");
 </script>
 
 

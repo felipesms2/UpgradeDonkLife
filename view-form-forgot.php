@@ -11,7 +11,7 @@
     </form>
 
     <script>
-        enteranother("formForgot");
+        enteranother("formForgot", "modalBtnSave");
         //avoidEnter();
     </script>
 
