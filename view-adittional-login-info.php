@@ -1,9 +1,9 @@
 <input type="hidden" id="additionaLogin" value="">
 <div class="d-none" id='footerLogin'> 
-<div class="mb-2">
-        <small id='additionalText'>Não tem uma conta?</small>
+<div class="mb-2 text-center">
+        <small id='additionalText'>Não tem uma conta?<br></small>
             <button 
-                class="btn btn-block btn-primary" 
+                class="btn" 
                 onclick="spaDiv('register'); displayAdd('register');"
                 id="additionalTextButton"
                 >Cadastrar</button>
