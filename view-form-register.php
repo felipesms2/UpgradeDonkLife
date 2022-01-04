@@ -6,6 +6,7 @@
     method="POST"
     action="./control-form-actions.php" 
     class="contactForm"
+    style="display: <?=$this->setDisplayForm("registrationForm")?>;"
 >
 <input type="hidden" name="action" value="registration"/>
     <div class="row">

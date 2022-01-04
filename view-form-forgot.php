@@ -8,7 +8,6 @@
         placeholder="Digite seu email aqui" 
         name="emailForgot" id="emailForgot"
     >
-    
     </form>
 
     <script>

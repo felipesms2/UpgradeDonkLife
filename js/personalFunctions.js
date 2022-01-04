@@ -1,6 +1,8 @@
 function modifyModalData(metaData) 
     {
         $("#modalTitle").html(metaData['title']);
+        $("#additionalContent").html(metaData['fileBodyLoad']);
+        $("#additionalContent").removeClass();
         //console.clear();
         previousUsername =  document.getElementById("username").value;
         $("#form-modal-body").load("view-form-forgot.php", function () {      
@@ -21,7 +23,7 @@ function forgotPassView()
 
 function spaDiv(module) 
     {
-        $("#form-content").load("view-form-" + module + ".php");
+       // $("#form-content").load("view-form-" + module + ".php");
     }
 
     var urlParams = new URLSearchParams(window.location.search);
@@ -35,12 +37,18 @@ function spaDiv(module)
         $("#additionalRole").val(mode);
         mainReferenceDiv = "footerRegister";
         secondaryReferenceDiv = "footerLogin";
+        formToshow = "registrationForm";
+        formToHide = "formLogin";
         if (mode =="login") 
             {
                 mainReferenceDiv = "footerLogin";
                 secondaryReferenceDiv = "footerRegister";
+                formToshow = "formLogin";                
+                formToHide = "registrationForm";                
             }
 
+        $("#" + formToshow).show();
+        $("#" + formToHide).hide();
         $("#" + secondaryReferenceDiv).addClass("d-none");
         $("#" + mainReferenceDiv).removeClass("d-none");
         //console.log(mode);     

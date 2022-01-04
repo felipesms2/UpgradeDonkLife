@@ -1,4 +1,4 @@
-<div id="formLogin">
+<div id="formLogin" style="display: <?=$this->setDisplayForm("formLogin")?>;">
     <label for="">Usuário</label>
     <input type="text" class="form-control" id="username">
     <label for="">Senha</label>

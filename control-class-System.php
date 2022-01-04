@@ -36,9 +36,14 @@ class System
         }
     }
 
-    public function setDisplayForm()
+    public function setDisplayForm($formID)
         {
-            
+            $cssDisplay = "";
+            if($formID == $this->formToHide)
+                {
+                    $cssDisplay = "none";
+                }
+            return $cssDisplay;
         }
 
     public function setAdditional()

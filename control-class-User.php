@@ -328,9 +328,10 @@ class User
         {
             $sqlCheckEmail = "SELECT username_clean FROM phpbb_users WHERE user_email='". $this->email ."' ";
             $resultCheck = $this->pdoConn->query($sqlCheckEmail);
-            $resultFetch = $resultCheck->fetch(PDO::FETCH_ASSOC);
-            $this->userLogin = $resultFetch['username_clean'];
             $rowCountCheck = $resultCheck->rowCount();
+            //echo "<pre>", var_dump($rowCountCheck) ,"</pre>";
+            
+            
             if ($rowCountCheck ==0) 
             {
                 $resetStatus = "Não foi possível econtrar no sistema o email informado  (<strong>$this->email</strong> )
@@ -340,7 +341,9 @@ class User
             }
             else
             {
-                
+            
+                $resultFetch = $resultCheck->fetch(PDO::FETCH_ASSOC);
+                $this->userLogin = $resultFetch['username_clean'];
                 $scriptSubfolder = "/drafts/UpgradeDonkLife/";
                 if ($_SERVER["SERVER_NAME"] !="localhost") 
                 {
