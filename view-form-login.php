@@ -1,4 +1,5 @@
 <div id="formLogin" style="display: <?=$this->setDisplayForm("formLogin")?>;">
+<form id="loginRules">
     <label for="">Usuário</label>
     <input type="text" class="form-control" id="username">
     <label for="">Senha</label>
@@ -16,4 +17,6 @@
         </small>
     </button>
     </div>
+
+    </form>
 </div>
