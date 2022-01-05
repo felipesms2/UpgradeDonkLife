@@ -230,8 +230,10 @@
             $user->password = $_POST["password"];
             $user->validToken = $_SESSION["tokenSecure"];
             $user->resetAuth();
-           
             break;
+        case 'checkEnter':
+
+        break;
         
         default:
         
