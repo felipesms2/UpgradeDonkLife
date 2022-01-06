@@ -408,3 +408,12 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
             }
             
     
+
+            $('#genericModal').on('hidden.bs.modal', function () {
+                alert("fechou");
+            });
+            
+            $('#genericModal').on('hide.bs.modal', function () {
+                alert("fechou");
+            });
+            
