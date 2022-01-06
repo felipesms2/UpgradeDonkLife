@@ -2,8 +2,10 @@
 <form 
     id="loginRules"
     method="POST"
-    action="../forum/index.php"
+    
+    action="control-form-actions.php"
 >
+<!-- action="../forum/index.php" -->
     <label for="">Usuário</label>
     <input 
         type="text" 
