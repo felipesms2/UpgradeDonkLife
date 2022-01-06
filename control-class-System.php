@@ -64,5 +64,25 @@ class System
     {
         return file_get_contents($urlFile);
     }
+
+    public function singleMsg($unsetRule = false)
+        {
+            
+            $mainMsgRules = [];
+            $mainMsgRules["contentMsg"] ="";
+            $mainMsgRules["classDiv"] ="d-none";
+
+            if (isset($_SESSION["mainMsg"])) 
+            {
+                $mainMsgRules["classDiv"] = "";
+                $mainMsgRules["contentMsg"] = $_SESSION['mainMsg'];
+                if($unsetRule ==true)
+                    {
+                        unset($_SESSION['mainMsg']);
+                    }
+            }
+            
+            return $mainMsgRules;
+        }
     
 }
