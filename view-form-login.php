@@ -2,7 +2,7 @@
 <form 
     id="loginRules"
     method="POST"
-    action="./control-form-actions.php"
+    action="../forum/index.php"
 >
     <label for="">Usuário</label>
     <input 
@@ -27,7 +27,7 @@
         type="button" 
     >
     Entrar</button>
-    <!-- <input type="submit" value="test" class="form-control"> -->
+    <input type="submit" value="test" class="form-control">
     <div class="text-center">
     <button 
         class="btn"
