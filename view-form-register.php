@@ -14,7 +14,7 @@
                 <label class="label" for="name">Como quer ser chamado?</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Nome">
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-name"
                 >
@@ -27,7 +27,7 @@
                 <label class="label" for="email">E-mail</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-email"
                 >
@@ -40,7 +40,7 @@
                 <label class="label" for="name">Senha</label>
                 <input type="password" class="form-control" name="password" id="password" placeholder="Senha">
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-password"
                 >
@@ -53,7 +53,7 @@
                 <label class="label" for="email">Confirmação de Senha</label>
                 <input type="password" class="form-control" name="passwordConfirm" id="passwordConfirm" placeholder="Senha novamente">
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-passwordConfirm"
                 >
@@ -67,7 +67,7 @@
                 <input type="text" onkeyup="AutoComplete()" class="form-control" name="placeLive" id="placeLive" placeholder="Cidade - UF">
                 <ul class="list-gpfrm" id="searchPlaceResult"></ul>
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-placeLive"
                 >
@@ -81,7 +81,7 @@
                 <input type="date"  class="form-control" name="birthDay" id="birthDay">
                 <ul class="list-gpfrm" id="searchPlaceResult"></ul>
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-placeLive"
                 >
@@ -95,7 +95,7 @@
                 <select class="form-control" id="codeArea" name="codeArea" placeholder="Escolha DDD">
                 </select>
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-codeArea"
                 >
@@ -108,7 +108,7 @@
                 <label class="label" for="email">Número</label>
                 <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="número" maxlength="9">
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-phoneNumber"
                 >
@@ -121,7 +121,7 @@
                 <label class="label" for="name">Qual seu principal nick no poker?</label>
                 <input type="text" class="form-control" name="userName" id="userName" placeholder="">
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-userName"
                 >
@@ -156,7 +156,7 @@
                     </li>
                 </ul>
                 <div 
-                    class="alert alert-danger text-center  error-validation"
+                    class="text-danger text-center  error-validation small"
                     style="display: none;"
                     id="error-userName"
                 >

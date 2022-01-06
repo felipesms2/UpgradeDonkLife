@@ -1,12 +1,9 @@
 function modifyModalData(metaData) 
     {
         $("#modalTitle").html(metaData['title']);
-        $("#additionalContent").html(metaData['fileBodyLoad']);
-        $("#additionalContent").hide();
-        //console.clear();
-        previousUsername =  document.getElementById("username").value;
-        $("#form-modal-body").load("view-form-forgot.php", function () {      
-            $("#usernameForgot").val(previousUsername);
+        $("#form-modal-body").load("view-form-forgot.php", function () {
+            $("#additionalContent").hide();      
+            $("#additionalContent").html(metaData['additionalContent']);
         });
     }
 
@@ -16,8 +13,8 @@ function forgotPassView()
     {
         let metadata =[];
         metadata["title"] = "Enviar Instruções";
-        metadata["fileBodyLoad"] = "";
-        metadata["formLoad"] = "";
+        metadata["fomFile"] = "view-form-forgot.php";
+        metadata["additionalContent"] = "";
         modifyModalData(metadata);
     }
 
@@ -199,11 +196,12 @@ function spaDiv(module)
 
     function modalChangeRegister(modalMetaData)
         {
-            $('#modalTitle').html(modalMetaData.title);
+            $('#form-modal-body').html("");
             $('#modalTitle').html(modalMetaData.title);
             $('#genericModal').modal('toggle');
             $('#additionalContent').removeClass('alert-success');
             $('#additionalContent').removeClass('alert-danger');
+
             $('#additionalContent').addClass(modalMetaData.newClass);
             $('#additionalContent').html(modalMetaData.msg);
             $('#additionalContent').show();
