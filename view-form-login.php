@@ -44,6 +44,6 @@
 
     </form>
         <script>
-            enteranother("formLogin", "validatePasswordBtn");
+            enteranother("formLogin", "btnCheckEnter");
         </script>
 </div>

@@ -11,6 +11,7 @@ function modifyModalData(metaData)
 
 function forgotPassView() 
     {
+        displaySaveButtonModal(true);
         let metadata =[];
         metadata["title"] = "Enviar Instruções";
         metadata["fomFile"] = "view-form-forgot.php";
@@ -140,10 +141,25 @@ function spaDiv(module)
             
         }
     
+    function displaySaveButtonModal(display) 
+        {
+            if (display===false) 
+            {
+                $("#modalBtnSave").hide();
+            }
+            else
+            {
+                $("#modalBtnSave").show();
+            }
+         
+        }
+
+    
 
 
         function registerSubmit() 
         {
+            displaySaveButtonModal(false);
             $(".error-validation").hide();
             $('#btnSubmit').prop('disabled', true);
             let formData = $('#registrationForm').serialize();
@@ -373,7 +389,8 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
         function checkEnter()
             {
 
-                btnSubmit = "btnCheckEnter";
+                displaySaveButtonModal(false);
+                btnSubmit = "btnCheckEnter";                
                 formId = "loginRules";
                 event.preventDefault();
                 
