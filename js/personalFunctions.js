@@ -399,7 +399,7 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
                         modalMetaData = []
                         modalMetaData["title"] = "Ops!!";
                         modalMetaData["newClass"] = "alert-danger";
-                        modalMetaData["msg"] = "Usuário ou senha incorretos, tente novamente";
+                        modalMetaData["msg"] = "Ocorreu um erro ao autorizar seu acesso, certifique-se que o usuário e senha foi digitado corretamente ou de ter validado seu usuário através do email de confirmação";
                         modalChangeRegister(modalMetaData);
                         //alert(res.msg);
                     },  

@@ -173,7 +173,6 @@
                     id="btnSubmit"
                     onclick="registerSubmit()"
                 >ALL IN!!! (Cadastrar)</button>
-                
                 <div class="submitting"></div>
             </div>
         </div>

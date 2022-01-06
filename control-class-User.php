@@ -385,6 +385,8 @@ class User
                     WHERE 
                         username_clean ='". $this->userLogin ."'
                     AND
+                        user_type ='0'
+                    AND
                         user_password = MD5('". $this->password ."')
                     LIMIT
                         1

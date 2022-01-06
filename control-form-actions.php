@@ -26,6 +26,9 @@
             $codeArea = $_POST['codeArea'];
             $phoneNumber = $_POST['phoneNumber'];
             $birthDay = $_POST['birthDay'];
+
+            // var_dump($_POST);
+
             if (isset($_POST['websites'])) 
                 {
                     $websites = $_POST['websites'];
@@ -110,11 +113,11 @@
                     $errorMsg['userName'] = "Nome de usuário";
                     $error .= "<li>Nome de usuário</li>";
                 }
-            if (strlen($password<6)) 
-            {
-                $idFieldError[] = "password";
-                $errorMsg["password"] = "Senha deve ter ao menos 6 caracteres";
-            }
+            if (strlen($password) <6) 
+                {
+                    $idFieldError[] = "password";
+                    $errorMsg["password"] = "Senha deve ter ao menos 6 caracteres" ;
+                }
             if (empty($password)) 
                 {
                     $idFieldError[] = "password";
