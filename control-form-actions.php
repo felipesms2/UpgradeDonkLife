@@ -231,8 +231,29 @@
             $user->validToken = $_SESSION["tokenSecure"];
             $user->resetAuth();
             break;
+
         case 'checkEnter':
 
+           // var_dump($_POST);
+            $error = false;
+            $userName = addslashes($_POST['userName']);
+            $password = addslashes($_POST['password']);
+            //$password = 444;
+            $user = new User($pdo);
+            $user->userLogin = $userName;
+            $user->password = $password;
+            $auth = $user->login();
+            //var_dump($auth);
+    
+            if($auth ==true)
+                {
+                    http_response_code(200);
+                }
+            else 
+                {
+                    http_response_code(406);
+                }
+            echo json_encode( [ 'msg' => $auth ] );
         break;
         
         default:

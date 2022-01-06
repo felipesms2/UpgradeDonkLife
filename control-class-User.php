@@ -28,6 +28,7 @@ class User
         public $phoneNumber;
         public $webSites = [];
         public $extraData = [];
+        public $authenticated = false;
 
         public function randonToken()
         {
@@ -373,6 +374,31 @@ class User
          //return $sqlToken;
             
         }
+
+        public function login()
+            {
+                $sqlChechLogin = "
+                    SELECT
+                        1 
+                    FROM 
+                        phpbb_users 
+                    WHERE 
+                        username_clean ='". $this->userLogin ."'
+                    AND
+                        user_password = MD5('". $this->password ."')
+                    LIMIT
+                        1
+                    ";
+                
+                $resultCheckLogin = $this->pdoConn->query($sqlChechLogin);
+                if($resultCheckLogin->rowCount()==1)
+                    {
+                        $this->authenticated = true;
+                    }
+
+                //return $sqlChechLogin;
+                return $this->authenticated;
+            }
 
 
 

@@ -194,11 +194,7 @@ function spaDiv(module)
                     displayErrorValidation(errorField, errorMsg);
                     
                 },
-            });
-            
-            
-            
-            
+            });       
         }
 
     function modalChangeRegister(modalMetaData)
@@ -374,4 +370,43 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
                 inputObj = "<input type='text' name='" + dynamicName +  "[]' id='dynamicName-"+ idCounter +"'> </input>";
                 $("#" + divId).html(inputObj);
             }
+
+
+        function checkEnter()
+            {
+
+                btnSubmit = "btnCheckEnter";
+                formId = "loginRules";
+                event.preventDefault();
+                
+                $('#' + btnSubmit).prop('disabled', true);
+                let formData = $('#' + formId).serialize();
+                //console.log(formData);
+    
+                $.ajax({
+                    method: 'POST',
+                    url: 'control-form-actions.php',
+                    data: formData,
+                    success: function (response) {
+                        let res = JSON.parse(response);
+                        $('#' + btnSubmit).prop('disabled', false);
+                        //alert(res.msg);
+                        $("#loginRules").submit();    
+                    },
+                    error: function (response) {
+    
+                        let res = JSON.parse(response.responseText);
+                        $('#responseContainer').html(res.msg);
+                        $('#' + btnSubmit).prop('disabled', false);
+                        modalMetaData = []
+                        modalMetaData["title"] = "Ops!!";
+                        modalMetaData["newClass"] = "alert-danger";
+                        modalMetaData["msg"] = "Usuário ou senha incorretos, tente novamente";
+                        modalChangeRegister(modalMetaData);
+                        //alert(res.msg);
+                    },  
+                    });
+            
+            }
+            
     
