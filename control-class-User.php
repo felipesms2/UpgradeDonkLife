@@ -391,6 +391,9 @@ class User
                     LIMIT
                         1
                     ";
+
+                    echo $sqlChechLogin;
+                    die;
                 
                 $resultCheckLogin = $this->pdoConn->query($sqlChechLogin);
                 if($resultCheckLogin->rowCount()==1)
