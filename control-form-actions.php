@@ -256,7 +256,7 @@
                 {
                     http_response_code(406);
                 }
-            var_dump($_POST);
+            //var_dump($_POST);
             echo json_encode( [ 'msg' => $auth ] );
         break;
         
