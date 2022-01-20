@@ -4,6 +4,7 @@
         <small id='additionalText'>Não tem uma conta?<br></small>
             <button 
                 class="btn" 
+                style="background-color: yellow; font-weight: bold;"
                 onclick="spaDiv('register'); displayAdd('register');"
                 id="additionalTextButton"
                 >Cadastrar</button>
