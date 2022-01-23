@@ -48,7 +48,8 @@
                     "phonenNumber" => $phoneNumber, 
                     "placeLive" => $placeLive,
                     "websites" => $websites,
-                    "birthDay" => $birthDay
+                    "birthDay" => $birthDay,
+                    "nickName" => $userName
                 );
              //var_dump("<pre>" , json_encode($user->extraData) , "</pre>");
             $user->userAvailability();
