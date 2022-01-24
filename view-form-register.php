@@ -164,7 +164,7 @@
             </div>
             </div>
         </div>
-<input type="submit">
+<!-- <input type="submit"> -->
         <div class="col-md-12">
             <div class="form-group">
                 <button 
