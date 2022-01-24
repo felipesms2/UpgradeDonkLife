@@ -7,7 +7,7 @@
                 style="background-color: yellow; font-weight: bold;"
                 onclick="spaDiv('register'); displayAdd('register');"
                 id="additionalTextButton"
-                >Cadastrar</button>
+                >Cadastre-se agora mesmo!</button>
     </div>
 </div>
 
