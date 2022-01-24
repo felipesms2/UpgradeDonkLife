@@ -196,7 +196,7 @@ class User
                     user_ip,
                     user_regdate,
                     '". $this->name ."',
-                    '". $this->userLogin ."',
+                    '". $this->email ."',
                     MD5('". $this->password ."'),
                     user_passchg,
                     '". $this->email ."',
