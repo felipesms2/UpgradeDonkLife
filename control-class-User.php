@@ -261,6 +261,8 @@ class User
                 user_id = '". $this->userIdModel ."'                 
             ";
 
+            echo "<pre>", $sqlRegisterUser, "</pre>" ;
+
             $this->pdoConn->exec($sqlRegisterUser);
             $this->lastInsertID = $this->pdoConn->lastInsertId();
 
