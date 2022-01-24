@@ -6,7 +6,7 @@
     
 >
 <!-- action="control-form-actions.php" -->
-    <label for="">Usuário</label>
+    <label for="">Email</label>
     <input 
         type="text" 
         class="form-control" 
