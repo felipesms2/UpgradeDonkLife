@@ -81,9 +81,9 @@
 
             if ($user->userFound['userLogin']==true) 
                 {
-                    $idFieldError[] = "userName";
-                    $errorMsg["userName"] = "Este usuário (<strong>$userName</strong>) Já está registrado";
-                    $error .="<li>Usuário ". $user->userLogin ." Já está registrado</li>" ;
+                    // $idFieldError[] = "userName";
+                    // $errorMsg["userName"] = "Este usuário (<strong>$userName</strong>) Já está registrado";
+                    // $error .="<li>Usuário ". $user->userLogin ." Já está registrado</li>" ;
                 }
             
             if ($user->userFound['email']==true) 
