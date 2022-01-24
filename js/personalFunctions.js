@@ -179,13 +179,14 @@ function spaDiv(module)
                     //console.log(formData);
                     $('#btnSubmit').prop('disabled', false);
                     modalMetaData = [];
-                    emailSent = $("#email").val();
-                    modalMetaData["msg"] = "Cadastro efetuado com sucesso, confira sua caixa de entrada ou spam no email  "+ emailSent +" ";
-                    modalMetaData["title"] = "Seu cadastro foi realizado com sucesso, ";
-                    modalMetaData["newClass"] = "alert-success";
-                    modalChangeRegister(modalMetaData);
+                    //emailSent = $("#email").val();
+                    //modalMetaData["msg"] = "Cadastro efetuado com sucesso, confira sua caixa de entrada ou spam no email  "+ emailSent +" ";
+                    //modalMetaData["title"] = "Seu cadastro foi realizado com sucesso, ";
+                    //modalMetaData["newClass"] = "alert-success";
+                    //modalChangeRegister(modalMetaData);
                     //document.getElementById("registrationForm").reset();
                     //$('#form-content').html("aaa");
+                    window.location.href = "./index.php?mode=login";
 
                 },
                 error: function (response) {

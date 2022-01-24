@@ -107,7 +107,6 @@
                     $errorMsg["email"] = "Email não foi informado";
                     $error .= "<li>Email não foi informado</li>";
                 }
-
             if (empty($userName)) 
                 {
                     $idFieldError[] = "userName";
