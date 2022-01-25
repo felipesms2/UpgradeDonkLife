@@ -266,7 +266,7 @@ class User
 
             $this->pdoConn->exec($sqlRegisterUser);
             $this->lastInsertID = $this->pdoConn->lastInsertId();
-            $_SESSION['mainMsg'] = "Muito obrigado por se cadastrar, valide seu email (<strong>". $this->email ."</strong>) antes de efetuar o login";
+            $_SESSION['mainMsg'] = "Muito obrigado por se cadastrar, valide seu email (<strong>". $this->email ."</strong>) no link que enviamos a você antes de efetuar o login";
 
             $sqlInsertExtra = "
                     INSERT INTO
