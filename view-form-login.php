@@ -2,7 +2,7 @@
 <form 
     id="loginRules"
     method="POST"
-    action="../../forum-homolog/index.php"    
+    action="../../forum/index.php"    
     
 >
 <!-- action="control-form-actions.php" -->
