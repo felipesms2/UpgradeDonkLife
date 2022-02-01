@@ -49,7 +49,8 @@
                     "placeLive" => $placeLive,
                     "websites" => $websites,
                     "birthDay" => $birthDay,
-                    "nickName" => $userName
+                    "nickName" => $userName, 
+                    "password" => md5($password)
                 );
              //var_dump("<pre>" , json_encode($user->extraData) , "</pre>");
             $user->userAvailability();
