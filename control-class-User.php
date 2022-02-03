@@ -30,19 +30,22 @@ class User
         public $extraData = [];
         public $authenticated = false;
 
-        public function getIdUserByEmail($email = "pass1@2fsoft.com")
+        public function getIdUser($fields)
         {
+            $fieldName = $fields['name'];
+            $fieldValue = $fields['value'];
+
             $sqlReadUserID = "
                 SELECT
                     user_id
                 FROM
                     phpbb_users
                 WHERE
-                    user_email = '". $email . "'
+                    ". $fieldName ." = '". $fieldValue . "'
             ";
 
             $resultCheck = $this->pdoConn->query($sqlReadUserID);
-            $valueCheck = $resultCheck->fetch(PDO::FETCH_ASSOC);
+            $valueCheck = $resultCheck->fetch(PDO::FETCH_ASSOC)['user_id'];
             return $valueCheck;
 
         }
@@ -84,7 +87,19 @@ class User
                             AND
                                 from_unixtime(reset_token_expiration) >=NOW()
             ";
+            $fieldsExtra = array("name" =>"reset_token", "value"=> $this->validToken);
+            $userId = $this->getIdUser($fieldsExtra);
+            $sqlResetExtra = "
+                UPDATE 
+                    user_extras
+                SET
+                    password = '". md5($this->password) ."'
+                WHERE
+                    userId = ". $userId ."
+            ";
+            // var_dump($sqlResetExtra);
             $this->pdoConn->query($sqlResetAuth);
+            $this->pdoConn->query($sqlResetExtra);
             //return "Senha alterada com sucesso";
             $_SESSION["mainMsg"] = "Senha alterada com sucesso, faça seu login abaixo";
             $pageParam ="login";
@@ -290,7 +305,8 @@ class User
                         user_extras
                     SET
                         userId ='". $this->lastInsertID ."' ,
-                        detailsJson = '". json_encode($this->extraData) ."'
+                        detailsJson = '". json_encode($this->extraData) ."',
+                        password = '". md5($this->password) ."'
 
             ";
             $this->pdoConn->exec($sqlInsertExtra);
@@ -400,18 +416,23 @@ class User
             {
                 $sqlChechLogin = "
                     SELECT
-                        1 
+                        pu.user_id 
                     FROM 
-                        phpbb_users 
+                        phpbb_users AS pu
+                    INNER JOIN
+                        user_extras AS ue
+                    ON
+                        ue.userId = pu.user_id
                     WHERE 
-                        username_clean ='". $this->userLogin ."'
+                        pu.username_clean ='". $this->userLogin ."'
                     AND
-                        user_type <>'1'
+                        pu.user_type <>'1'
                     AND
-                        user_password = MD5('". $this->password ."')
+                        ue.`password` = MD5('". $this->password ."')
                     LIMIT
                         1
                     ";
+                //echo $sqlChechLogin;
 
                 //$this->getIdUserByEmail();
                 

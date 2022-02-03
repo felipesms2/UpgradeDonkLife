@@ -110,9 +110,7 @@ function spaDiv(module)
                 url: 'control-form-actions.php',
                 data: formData,
                 success: function (response) {
-                    console.log(response);
                     let res = JSON.parse(response);
-
                     //$('#responseContainer').removeClass('alert-danger');
                     //$('#responseContainer').addClass('alert-success');
                     $('#responseContainer').html(res.msg);
@@ -120,6 +118,7 @@ function spaDiv(module)
                     //console.log(formData);
                     $('#btnResetAuth').prop('disabled', false);
                     $('#action').val("resetConfirm");
+
                     $('#resetAuth').submit();
 
                     //document.getElementById("registrationForm").reset();
@@ -405,13 +404,14 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
                     data: formData,
                     success: function (response) {
                         $('#' + btnSubmit).prop('disabled', false);
-                        alert(JSON.stringify(response));
+                        //alert(JSON.stringify(response));
                         console.clear();
                         console.log(response);
-                        $("#loginRules").submit();    
+                        alert(1);
+
+                        //$("#loginRules").submit();    
                     },
                     error: function (response) {
-                        alert(0);
                         $('#' + btnSubmit).prop('disabled', false);
                         modalMetaData = []
                         modalMetaData["title"] = "Ops!!";
