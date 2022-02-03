@@ -407,9 +407,7 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
                         //alert(JSON.stringify(response));
                         console.clear();
                         console.log(response);
-                        alert(1);
-
-                        //$("#loginRules").submit();    
+                        $("#loginRules").submit();    
                     },
                     error: function (response) {
                         $('#' + btnSubmit).prop('disabled', false);

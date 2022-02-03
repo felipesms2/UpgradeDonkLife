@@ -247,7 +247,7 @@
             $user->userLogin = $userName;
             $user->password = $password;
             $auth = $user->login();
-            $responseDB = $user->getIdUserByEmail($userName);
+            //$responseDB = $user->getIdUserByEmail($userName);
             //var_dump($auth);
     
             if($auth ==true)
