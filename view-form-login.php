@@ -29,7 +29,7 @@
         type="button" 
     >
     Entrar</button>
-    <!-- <input type="submit" value="test" class="form-control"> -->
+    <input type="submit" value="test" class="form-control">
     <div class="text-center">
     <button 
         class="btn"

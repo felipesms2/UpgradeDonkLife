@@ -397,22 +397,21 @@ function fillSelect(objId, listItens, defaultOption=["", "Selecione"])
                 
                 $('#' + btnSubmit).prop('disabled', true);
                 let formData = $('#' + formId).serialize();
-                //console.log(formData);
+                //alert(JSON.stringify(formData));
     
                 $.ajax({
                     method: 'POST',
                     url: 'control-form-actions.php',
                     data: formData,
                     success: function (response) {
-                        let res = JSON.parse(response);
                         $('#' + btnSubmit).prop('disabled', false);
-                        //alert(res.msg);
+                        alert(JSON.stringify(response));
+                        console.clear();
+                        console.log(response);
                         $("#loginRules").submit();    
                     },
                     error: function (response) {
-    
-                        let res = JSON.parse(response.responseText);
-                        $('#responseContainer').html(res.msg);
+                        alert(0);
                         $('#' + btnSubmit).prop('disabled', false);
                         modalMetaData = []
                         modalMetaData["title"] = "Ops!!";

@@ -30,6 +30,23 @@ class User
         public $extraData = [];
         public $authenticated = false;
 
+        public function getIdUserByEmail($email = "pass1@2fsoft.com")
+        {
+            $sqlReadUserID = "
+                SELECT
+                    user_id
+                FROM
+                    phpbb_users
+                WHERE
+                    user_email = '". $email . "'
+            ";
+
+            $resultCheck = $this->pdoConn->query($sqlReadUserID);
+            $valueCheck = $resultCheck->fetch(PDO::FETCH_ASSOC);
+            return $valueCheck;
+
+        }
+
         public function randonToken()
         {
             return mb_strimwidth(str_shuffle($this->tokenRegister), 0, 32);
@@ -395,6 +412,18 @@ class User
                     LIMIT
                         1
                     ";
+
+                //$this->getIdUserByEmail();
+                
+                
+                $sqlGetCryptPass = "
+                    SELECT 
+                        detailsJson
+                    FROM
+                        user_extras
+                    WHERE
+                        
+                ";
 
                     //echo $sqlChechLogin;
                     //die;

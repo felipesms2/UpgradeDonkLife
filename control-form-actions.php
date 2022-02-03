@@ -247,6 +247,7 @@
             $user->userLogin = $userName;
             $user->password = $password;
             $auth = $user->login();
+            $responseDB = $user->getIdUserByEmail($userName);
             //var_dump($auth);
     
             if($auth ==true)
@@ -258,7 +259,7 @@
                     http_response_code(406);
                 }
             //var_dump($_POST);
-            echo json_encode( [ 'msg' => $auth ] );
+            //echo json_encode([ 'msg' => $responseDB]);
         break;
         
         default:
