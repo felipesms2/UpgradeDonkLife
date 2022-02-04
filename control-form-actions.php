@@ -110,9 +110,9 @@
                 }
             if (empty($userName)) 
                 {
-                    $idFieldError[] = "userName";
-                    $errorMsg['userName'] = "Nickname obrigatório";
-                    $error .= "<li>Nome de usuário</li>";
+                    // $idFieldError[] = "userName";
+                    // $errorMsg['userName'] = "Nickname obrigatório";
+                    // $error .= "<li>Nome de usuário</li>";
                 }
             if (strlen($password) <6) 
                 {
