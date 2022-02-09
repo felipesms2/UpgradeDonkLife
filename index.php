@@ -20,7 +20,7 @@
             {
               $mode = $_GET['mode'];   
             }
-        else $mode = null;
+        else $mode = "login";
 
 		$system = new System();
 		$system->defaultStartForm = $mode;
